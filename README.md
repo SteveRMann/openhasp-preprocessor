@@ -88,3 +88,4 @@ python compress.py sample-pages/page0.src page0-compressed.src
 ## Useage:
 python expand.py sample-pages/page0-compressed.src page0-expanded.src  
 
+# Plate screenshot overlay.psd - A photoshop tool for designing pages
