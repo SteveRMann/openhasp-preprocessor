@@ -2,15 +2,21 @@
 compress the unnecessary whitespace from a jsonl file
 
 Usage:
-python compress inputfile outputfile
+python compress.py inputfile outputfile
  
 """
 
 import re
 import sys
 
+# Check if a command-line argument has been provided
+if len(sys.argv) < 3 or sys.argv[1] in ['help', '?']:
+    print('Usage: python compress.py inputfile outputfile')
+    sys.exit(1)
+
 # Get the input file and output file from the command-line arguments
 infile, outfile = sys.argv[1], sys.argv[2]
+
 
 with open(infile, 'r') as f:
     content = f.read()

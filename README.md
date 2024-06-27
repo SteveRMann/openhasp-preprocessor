@@ -1,11 +1,11 @@
-<h3 align="center">Utilities for OpenHASP</h3>
+<h3 align="center">Pre-processor and Utilities for OpenHASP</h3>
 
 ----
 
 # python.py - an openhasp-preprocessor.
 A preprocessor for the pages.jsonl file.  This allows you to make the page definitions in separate files and use variables to define variables for x: and y: positions or colors.  Really anything can be substituted globally.
 
-#Useage:
+## Useage:
 **Preparation**
 1. Create a .src file in a pages folder for each page.  
 For example **page2.src** is the **jsonl** code for everything that will appear on page 2.  
@@ -76,3 +76,15 @@ Example:
 2. Run: python pages.py sample-pages  
 
 The script pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, then makes the variable substitutions and outputs to the **pages.jsonl** file that you send to the panel.  
+
+<h3 align="center">Utilities</h3>
+
+# compress.py - Compress the pages.jsonl input file by removing unnecessary whitespace.
+## Useage:
+python compress.py sample-pages/page0.src page0-compressed.src  
+
+
+# expand.py - Exoands the pages.jsonl input file by placing every element on its own line.
+## Useage:
+python expand.py sample-pages/page0-compressed.src page0-expanded.src  
+

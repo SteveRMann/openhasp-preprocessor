@@ -1,0 +1,32 @@
+{
+  "comment":" ------------------------- Page 12 Experiments -------------------------"
+}
+
+
+{
+  "comment":"----- Large button",
+  "page":12,"id":1,
+  "obj":"btn",
+  "x":120,"y":100,"w":240,"h":240,
+  "text_color":"white",
+  "text":"Office Light",
+  "align":2,
+  "value_font":22,
+  "radius":0,"border_side":0
+}
+
+{
+  "comment":"----- Rounded Rectangle",
+  "page":12,"id":2,
+  "obj":"obj",
+  "x":5,"y":40,"w":200,"h":80,
+  "click":0
+}
+
+{
+  "comment":"----- Colored text",
+  "page":12,"id":3,
+  "obj":"label",
+  "x":15,"y":54,"w":150,"h":50,
+  "text":"#0000FF \uE64A# #FF0000 Office# #008000 light#!"
+}

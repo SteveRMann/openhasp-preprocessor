@@ -1,0 +1,120 @@
+{
+  "comment":" ------------------------------ Page 1 ------------------------------"
+}
+
+{
+  "comment":"----- Dexcom Value",
+  "page":1,"id":1,
+  "x":10,"y":0,"w":100,"h":40,
+  "obj":"label",
+  "text":"p1b1","align":0,"text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Dexcom Trend",
+  "page":1,"id":18,
+  "obj":"label",
+  "x":110,"y":0,"w":240,"h":40,
+  "text":"p1b18","align":0,"text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Light button",
+  "page":1,"id":2,
+  "obj":"btn",
+  "x":@p1-labels,"y":50,"w":105,"h":90,
+  "toggle":true,
+  "text":"\uE335","text_font":48,"mode":"break","align":1
+}
+
+{
+  "comment":"----- Light label",
+  "page":1,"id":9,
+  "obj":"label",
+  "X":@p1-labels,"y":119,"w":105,"h":35,"text":"Office",
+  "align":1,"bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- RSSI label -----",
+  "page":1,"id":19,
+  "obj":"label",
+  "x":@p1-labels,"y":@p1r1,"h":40,"w":80,
+  "text":"RSSI:","align":0,
+  "text_font": 35,
+  "bg_color":"#2C3E50","bg_opa": 255,"text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- RSSI icon",
+  "page":1,"id":4,
+  "obj":"btn",
+  "X":100,"y":@p1r1,"w":30,"h":40,
+  "text_font":"2",
+  "text":"\uE5A9","text_color":"gray","bg_opa":0,"border_width":0
+}
+
+{
+  "comment":"----- RSSI value",
+  "page":1,"id":5,
+  "obj":"label",
+  "X":@p1-values,"y":@p1r1,"w":150,"h":40,
+  "text":"p1b5","align":0,"bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Green Horizontal Line",
+  "page": 1,"id": 6,
+  "obj": "btn",
+  "x": 10,"y": 45,"w": 470,"h": 2,
+  "bg_color": "green",
+  "bg_opa": 255,
+  "border_width": 0
+}
+
+{
+  "comment":"----- Blue Horizontal Line",
+  "page": 1,"id": 7,
+  "obj": "btn",
+  "x": 10,"y": 160,"w": 470,"h": 2,
+  "bg_color": "blue",
+  "bg_opa": 255,
+  "border_width": 0
+}
+
+{
+  "comment":"----- Outside label -----",
+  "page":1,"id":10,
+  "obj":"label",
+  "x":10,"y":@p1r2,"h":40,"w":120,
+  "text":"Outside:","align":0,
+  "text_font": 35,
+  "bg_color":"#2C3E50","bg_opa": 255,"text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Outside Temperature Data",
+  "page":1,"id":11,
+  "obj":"label",
+  "x":@p1-values,"y":@p1r2,"h":50,"w":200,"text":"p1b11","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Upstairs label -----",
+  "page":1,"id":12,
+  "obj":"label",
+  "x":@p1-labels,"y":@p1r3,"h":50,"w":200,"text":"Upstairs:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Upstairs Temperature Data",
+  "page":1,"id":13,
+  "obj":"label",
+  "x":@p1-values,"y":@p1r3,"h":50,"w":200,"text":"p1b13","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+
+
