@@ -3,12 +3,12 @@
 ----
 
 # python.py - an openhasp-preprocessor.
-A preprocessor for the pages.jsonl file.  This allows you to make the page definitions in separate files and use variables to define variables for x: and y: positions or colors.  Really anything can be substituted glbally.
+A preprocessor for the pages.jsonl file.  This allows you to make the page definitions in separate files and use variables to define variables for x: and y: positions or colors.  Really anything can be substituted globally.
 
 #Useage:
 **Preparation**
 1. Create a .src file in a pages folder for each page.  
-For example page2.src is the **jsonl** code for everything that will appear on page 2.
+For example **page2.src** is the **jsonl** code for everything that will appear on page 2.  
 Example:  
 ```
 {
@@ -51,9 +51,9 @@ Example:
 }
 ```
 Notice that the x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2r1.  
-The file: pages.ini (below) is where the variables are defined. Sounds like a lot of work, but it makes moving whole columns or rows of objects easy. For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.ini file.  
+The file: pages.ini (below) is where the variables are defined. (You can use any name for your variables). Sounds like a lot of work, but it makes moving whole columns or rows of objects easy. For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.ini file.  
 
-2. Create a variables key:value file named **pages.ini**
+2. Create a variables key:value file named **pages.ini**  
 Example:  
 ```
 @p1-labels:10
@@ -75,5 +75,5 @@ Example:
 1. In a cmd window, CD to the folder that contains **pages.py** and **pages.ini**.  
 2. Run: python pages.py sample-pages  
 
-The script pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, then makes the variable substitutions and outputs to the pages.jsonl file that you send to the panel.  
+The script pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, then makes the variable substitutions and outputs to the **pages.jsonl** file that you send to the panel.  
 
