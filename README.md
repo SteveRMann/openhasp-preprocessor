@@ -81,13 +81,15 @@ The script pages.py will wrap all this up.  First it merges all of your page.src
 
 # compress.py 
 Compress the pages.jsonl input file by removing unnecessary whitespace.
-## Useage:
+```Useage:
 > python compress.py sample-pages/page0.src page0-compressed.src  
-
+```
 
 # expand.py
-Exoands the pages.jsonl input file by placing every element on its own line.
-## Useage:
+Expands the pages.jsonl input file by placing every element on its own line.
+```Useage:
 > python expand.py sample-pages/page0-compressed.src page0-expanded.src  
+```
 
-# Plate screenshot overlay.psd - A photoshop tool for designing pages
+# Plate screenshot overlay.psd
+A photoshop tool for designing pages
