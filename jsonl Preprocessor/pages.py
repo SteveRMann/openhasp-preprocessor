@@ -1,4 +1,5 @@
 import os
+import sys  # For the command line arguments
 
 def merge_files(src_dir, output_file_path):
     # Open the output file
@@ -59,7 +60,22 @@ def check_duplicates(file_path):
         if len(line_numbers) > 1:
             print(f'Found duplicate for {key} at lines {line_numbers}')
 
-# Test the functions
-merge_files('pages', 'pages.src')
-replace_values('pages.src', 'pages.sub', 'pages.jsonl')
-check_duplicates('pages.jsonl')
+# Check if a command-line argument has been provided
+if len(sys.argv) < 2 or sys.argv[1] in ['help', '?']:
+    print('Usage: python pages.py src_dir')
+    print('Where src_dir contains the page.src files.')
+    sys.exit(1)
+
+# Get the source directory from the command-line arguments
+src_dir = sys.argv[1]
+
+# Check if the source directory exists
+if not os.path.isdir(src_dir):
+    print(f'Error: The directory {src_dir} does not exist.')
+    sys.exit(1)
+    
+# Run the functions
+merge_files(src_dir, 'pages.src')  # src_dir, output_file_path
+replace_values('pages.src', 'pages.sub', 'pages.jsonl') # src_file_path, sub_file_path, out_file_path
+os.remove('pages.src')  # Delete the 'pages.src' file
+check_duplicates('pages.jsonl') # file_path
