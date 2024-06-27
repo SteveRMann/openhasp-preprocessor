@@ -8,20 +8,22 @@ For example page2.src is the openHasp jsonl code for everything that will appear
 
 2. Create a substitutions key:value file named pages.sub  
 Example:  
-@p1-labels:10  
-@p1-values:160  
-@p1r1:180  
-@p1r2:220  
-@p1r3:260  
-@p1r4:300  
-  
-@p2-labels:10  
-@p2-values:180  
-@p2r1:80  
-@p2r2:120  
-@p2r3:160  
-@p2r4:200  
-@p2r5:240  
+```
+@p1-labels:10
+@p1-values:160
+@p1r1:180
+@p1r2:220
+@p1r3:260
+@p1r4:300
+
+@p2-labels:10
+@p2-values:180
+@p2r1:80
+@p2r2:120
+@p2r3:160
+@p2r4:200
+@p2r5:240
+```
 
 Now, lets look at the example file: page2.src
 ```
