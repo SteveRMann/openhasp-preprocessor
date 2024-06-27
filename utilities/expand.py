@@ -5,9 +5,9 @@ Usage:
 python expand.py inputfile outputfile
 """
 
-import json
 import sys
 import re
+import os
 
 
 # Check if a command-line argument has been provided
@@ -18,6 +18,11 @@ if len(sys.argv) < 3 or sys.argv[1] in ['help', '?']:
 # Get the input file and output file from the command-line arguments
 infile, outfile = sys.argv[1], sys.argv[2]
 
+# Check if the input file exists
+if not os.path.exists(infile):
+    print(f"Error: The file {infile} does not exist.")
+    sys.exit(1)
+    
 def format_file(input_file_path, output_file_path):
     with open(input_file_path, 'r') as input_file, open(output_file_path, 'w') as output_file:
         for line in input_file:
