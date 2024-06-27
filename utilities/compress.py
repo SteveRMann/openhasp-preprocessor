@@ -8,6 +8,7 @@ python compress.py inputfile outputfile
 
 import re
 import sys
+import os
 
 # Check if a command-line argument has been provided
 if len(sys.argv) < 3 or sys.argv[1] in ['help', '?']:
@@ -17,7 +18,12 @@ if len(sys.argv) < 3 or sys.argv[1] in ['help', '?']:
 # Get the input file and output file from the command-line arguments
 infile, outfile = sys.argv[1], sys.argv[2]
 
-
+# Check if the input file exists
+if not os.path.exists(infile):
+    print(f"Error: The file {infile} does not exist.")
+    sys.exit(1)
+    
+    
 with open(infile, 'r') as f:
     content = f.read()
 
