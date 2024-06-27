@@ -1,0 +1,43 @@
+{
+  "comment":" ------------------------- Page 11 Dropdown test -------------------------"
+}
+{
+  "comment":"----- Dropdown",
+  "page":11,"id":1,
+  "obj":"dropdown",
+  "toggle":true,
+  "x":250,"y":150,"w":200,"h":60,
+  "options":"Office\nDesklight\nWorklight"
+}
+
+{
+  "comment":"----- time",
+  "page":11,"id":2,
+  "obj":"label",
+  "x":3,"y":5,"h":35,"w":75,
+  "text":"00:00",
+  "align":0,"bg_color":"#2C3E50"
+}
+
+{
+  "comment":"----- temperature",
+  "page":11,"id":3,
+  "obj":"label",
+  "x":370,"y":5,"h":35,"w":75,
+  "text":"000.0","align":2,"bg_color":"#2C3E50"
+}
+
+{
+  "comment":"Degrees F",
+  "page":11,"id":4,
+  "obj":"label",
+  "x":445,"y":5,"h":35,"w":45,
+  "text":"°F","align":1,"bg_color":"#2C3E50"}
+
+{
+  "comment":"Internal Relay",
+  "page":11,"id":5,
+  "obj":"switch",
+  "x":30,"y":150,"w":180,"h":75,
+  "radius":40,"radius20":40,"groupid":1
+}

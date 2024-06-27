@@ -1,0 +1,102 @@
+{
+  "comment":" ------------------------- Page 2 Temperatures -------------------------"
+}
+
+{
+  "comment":"----- PageTitle",
+  "page":2,"id":1,
+  "obj":"btn",
+  "x":120,"y":0,"w":240,"h":40,
+  "text":"Temperatures","align":2,"value_font":22,
+  "bg_opa":0,"text_color":"gray","radius":0,"border_side":0
+}
+
+{
+  "comment":"----- Green Horizontal Line",
+  "page": 2,"id": 12,
+  "obj": "btn",
+  "x": 10,"y": 45,"w": 470,"h": 2,
+  "bg_color": "green",
+  "bg_opa": 255,
+  "border_width": 0
+}
+
+{
+  "comment":"----- Attic label",
+  "page":2,"id":2,
+  "obj":"label",
+  "x":@p2-labels,"y":@p2r1,"h":50,"w":200,"text":"Attic:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Attic Temperature data",
+  "page":2,"id":3,
+  "obj":"label",
+  "x":@p2-values,"y":@p2r1,"h":50,"w":200,"text":"p2b3","align":0,
+  "text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Outside label",
+  "page":2,"id":4,
+  "obj":"label",
+  "x":@p2-labels,"y":@p2r2,"h":50,"w":200,"text":"Outside:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Outside Temperature Data",
+  "page":2,"id":5,
+  "obj":"label",
+  "x":@p2-values,"y":@p2r2,"h":50,"w":200,"text":"p2b5","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Upstairs label",
+  "page":2,"id":6,
+  "obj":"label",
+  "x":@p2-labels,"y":@p2r3,"h":50,"w":200,"text":"Upstairs:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Upstairs Temperature Data",
+  "page":2,"id":7,
+  "obj":"label",
+  "x":@p2-values,"y":@p2r3,"h":50,"w":200,"text":"p2b7","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Downstairs label",
+  "page":2,"id":8,
+  "obj":"label",
+  "x":@p2-labels,"y":@p2r4,"h":50,"w":200,"text":"Downstairs:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Downstairs Temperature Data",
+  "page":2,"id":9,
+  "obj":"label",
+  "x":@p2-values,"y":@p2r4,"h":50,"w":200,"text":"p2b9","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Basement label",
+  "page":2,"id":10,
+  "obj":"label",
+  "x":@p2-labels,"y":@p2r5,"h":50,"w":200,"text":"Basement:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Basement Temperature Data",
+  "page":2,"id":11,
+  "obj":"label",
+  "x":@p2-values,"y":@p2r5,"h":50,"w":200,"text":"p2b11","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
