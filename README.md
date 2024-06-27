@@ -2,36 +2,14 @@
 
 ----
 
-# openhasp-preprocessor
-A preprocessor for the pages.jsonl file.  This allows you to make the page definitions in separate files and use variables to define things like x: and y: positions or colors.
+# python.py - an openhasp-preprocessor.
+A preprocessor for the pages.jsonl file.  This allows you to make the page definitions in separate files and use variables to define variables for x: and y: positions or colors.  Really anything can be substituted glbally.
 
 #Useage:
-It's probably easier to just look at the example.  
-
-1. Create a src file in a pages folder for each page.  
-For example page2.src is the openHasp jsonl code for everything that will appear on page 2.
-(Example below)
-
-2. Create a substitutions key:value file named pages.sub  
+**Preparation**
+1. Create a .src file in a pages folder for each page.  
+For example page2.src is the **jsonl** code for everything that will appear on page 2.
 Example:  
-```
-@p1-labels:10
-@p1-values:160
-@p1r1:180
-@p1r2:220
-@p1r3:260
-@p1r4:300
-
-@p2-labels:10
-@p2-values:180
-@p2r1:80
-@p2r2:120
-@p2r3:160
-@p2r4:200
-@p2r5:240
-```
-
-Now, lets look at the example file: page2.src
 ```
 {
   "comment":" ------------------------- Page 2 - Temperatures -------------------------"
@@ -72,9 +50,30 @@ Now, lets look at the example file: page2.src
   "text_color":"#FFFFFF"
 }
 ```
+Notice that the x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2r1.  
+The file: pages.ini (below) is where the variables are defined. Sounds like a lot of work, but it makes moving whole columns or rows of objects easy. For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.ini file.  
 
-Notice that the x: and y: positions are populated with @p2-labels, @p2-values and @p2r1. Look back at the file: pages.sub.  This is where the variable substitutions are defined. Sounds like a lot of work, but it makes moving whole columns or rows of objects easy. For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.sub file.  
+2. Create a variables key:value file named **pages.ini**
+Example:  
+```
+@p1-labels:10
+@p1-values:160
+@p1r1:180
+@p1r2:220
+@p1r3:260
+@p1r4:300
 
-The Python script, pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, pages.src, then makes the variable substitutions and outputs to the pages.jsonl file that you send to the panel.  
+@p2-labels:10
+@p2-values:180
+@p2r1:80
+@p2r2:120
+@p2r3:160
+@p2r4:200
+@p2r5:240
+```
+**Execution**
+1. In a cmd window, CD to the folder that contains **pages.py** and **pages.ini**.  
+2. Run: python pages.py sample-pages  
 
+The script pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, then makes the variable substitutions and outputs to the pages.jsonl file that you send to the panel.  
 

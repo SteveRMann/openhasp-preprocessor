@@ -15,10 +15,10 @@ def merge_files(src_dir, output_file_path):
                     # Write a newline to separate the contents of different files
                     output_file.write('\n')
 
-def replace_values(src_file_path, sub_file_path, out_file_path):
+def replace_values(src_file_path, ini_file_path, out_file_path):
     # Read the substitutions file and build a dictionary of replacements
     replacements = {}
-    with open(sub_file_path, 'r') as sub_file:
+    with open(ini_file_path, 'r') as sub_file:
         for line in sub_file:
             line = line.strip()
             if line:  # Ignore blank lines
@@ -76,6 +76,6 @@ if not os.path.isdir(src_dir):
     
 # Run the functions
 merge_files(src_dir, 'pages.src')  # src_dir, output_file_path
-replace_values('pages.src', 'pages.sub', 'pages.jsonl') # src_file_path, sub_file_path, out_file_path
+replace_values('pages.src', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
 os.remove('pages.src')  # Delete the 'pages.src' file
 check_duplicates('pages.jsonl') # file_path
