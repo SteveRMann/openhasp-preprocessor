@@ -5,7 +5,9 @@
 # openhasp-preprocessor
 A preprocessor for the pages.jsonl file.  This allows you to make the page definitions in separate files and use variables to define things like x: and y: positions or colors.
 
-##Useage:
+#Useage:
+It's probably easier to just look at the example.  
+
 1. Create a src file in a pages folder for each page.  
 For example page2.src is the openHasp jsonl code for everything that will appear on page 2.
 (Example below)
