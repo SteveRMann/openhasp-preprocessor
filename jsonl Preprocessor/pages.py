@@ -21,6 +21,7 @@ def merge_files(src_dir, output_file_path):
                     # Write a newline to separate the contents of different files
                     output_file.write('\n')
 
+
 def check_custom_format(file_path):
     # Open the file
     with open(file_path, 'r') as file:
@@ -57,6 +58,10 @@ def check_custom_format(file_path):
             # If we're inside a block, add the line to the block lines
             elif inside_block:
                 block_lines.append(line)
+            # If we're not inside a block and the line is not empty or a comment, raise an error
+            elif line.strip() and not line.strip().startswith('#'):
+                print(f"Error in {file_path} on line {line_number}: Line is not inside a data block")
+                sys.exit(1)
 
 
                     
@@ -122,8 +127,8 @@ if not os.path.isdir(src_dir):
     sys.exit(1)
     
 # Run the functions
-merge_files(src_dir, 'pages.src')  # src_dir, output_file_path
-check_custom_format('pages.src')
-replace_values('pages.src', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
-os.remove('pages.src')  # Delete the 'pages.src' file
+merge_files(src_dir, 'pages.tmp')  # src_dir, output_file_path
+check_custom_format('pages.tmp')
+replace_values('pages.tmp', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
+os.remove('pages.tmp')  # Delete the 'pages.tmp' file
 check_duplicates('pages.jsonl') # file_path
