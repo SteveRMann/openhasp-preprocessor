@@ -15,6 +15,7 @@ Example:
   "comment":" ------------------------- Page 2 - Temperatures -------------------------"
 }
 
+# ********** Page title **********
 {
   "comment":"----- PageTitle",
   "page":2,"id":1,
@@ -34,6 +35,7 @@ Example:
   "border_width": 0
 }
 
+# ********** Attic label and temperature **********
 {
   "comment":"----- Attic label",
   "page":2,"id":2,
@@ -50,8 +52,12 @@ Example:
   "text_color":"#FFFFFF"
 }
 ```
-Notice that the x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2r1.  
+**Notes**  
+```
+1. The x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2r1.  
 The file: pages.ini (below) is where the variables are defined. (You can use any name for your variables). Sounds like a lot of work, but it makes moving whole columns or rows of objects easy. For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.ini file.  
+2. Comments starting with a # are ignored in the processing  
+```
 
 2. Create a variables key:value file named **pages.ini**  
 Example:  
