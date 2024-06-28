@@ -40,7 +40,7 @@ Example:
   "comment":"----- Attic label",
   "page":2,"id":2,
   "obj":"label",
-  "x":@p2-labels,"y":@p2r1,"h":50,"w":200,"text":"Attic:","align":0,
+  "x":@p2-labels,"y":@p2-row1,"h":50,"w":200,"text":"Attic:","align":0,
   "bg_color":"#2C3E50","text_color":"#FFFFFF"
 }
 
@@ -48,13 +48,13 @@ Example:
   "comment":"----- Attic Temperature data",
   "page":2,"id":3,
   "obj":"label",
-  "x":@p2-values,"y":@p2r1,"h":50,"w":200,"text":"p2b3","align":0,
+  "x":@p2-values,"y":@p2-row1,"h":50,"w":200,"text":"p2b3","align":0,
   "text_color":"#FFFFFF"
 }
 ```
 **Notes**  
 ```
-1. The x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2r1.  
+1. The x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2-row1.  
 The file: pages.ini (below) is where the variables are defined. (You can use any name for your variables).
 Sounds like a lot of work, but it makes moving whole columns or rows of objects easy.
 For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.ini file.  
@@ -66,18 +66,18 @@ Example:
 ```
 @p1-labels:10
 @p1-values:160
-@p1r1:180
-@p1r2:220
-@p1r3:260
-@p1r4:300
+@p1-row1:180
+@p1-row2:220
+@p1-row3:260
+@p1-row4:300
 
 @p2-labels:10
 @p2-values:180
-@p2r1:80
-@p2r2:120
-@p2r3:160
-@p2r4:200
-@p2r5:240
+@p2-row1:80
+@p2-row2:120
+@p2-row3:160
+@p2-row4:200
+@p2-row5:240
 ```
 **Execution**
 1. In a cmd window, CD to the folder that contains **pages.py** and **pages.ini**.  
