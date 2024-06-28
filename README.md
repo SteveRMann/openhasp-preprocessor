@@ -92,7 +92,7 @@ Example:
 ```
 
 
-##Execution
+**Execution**
 1. In a cmd window, CD to the folder that contains **pages.py** and **pages.ini**.  
 2. Run: python pages.py sample-pages  
 
