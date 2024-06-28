@@ -92,13 +92,13 @@ Example:
 ```
 
 
-**Execution**
+##Execution
 1. In a cmd window, CD to the folder that contains **pages.py** and **pages.ini**.  
 2. Run: python pages.py sample-pages  
 
 The script pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, then makes the variable substitutions and outputs to the **pages.jsonl** file that you send to the panel.  
 
-<h3 align="center">Utilities</h3>
+## Utilities
 These are utilities I developed for testing purposes. They are just kept here for archival purposes.
 
 # compress.py 
