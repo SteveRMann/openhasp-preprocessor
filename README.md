@@ -55,7 +55,9 @@ Example:
 **Notes**  
 ```
 1. The x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2r1.  
-The file: pages.ini (below) is where the variables are defined. (You can use any name for your variables). Sounds like a lot of work, but it makes moving whole columns or rows of objects easy. For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.ini file.  
+The file: pages.ini (below) is where the variables are defined. (You can use any name for your variables).
+Sounds like a lot of work, but it makes moving whole columns or rows of objects easy.
+For example if I want all of my object labels to start on a different X position, I only have to make a single change in the pages.ini file.  
 2. Comments starting with a # are ignored in the processing  
 ```
 
