@@ -7,10 +7,35 @@ A preprocessor for the pages.jsonl file.  This allows you to make page definitio
 variables to define values for x: and y: positions or colors.  
 
 The script also checks for some syntax errors.  
-When you get an error the message will include the intermediate filename, pages.tmp, and the line number causing the error.  
+When you get an error the message will include the intermediate filename, for example: pages.tmp, and the line number causing the error.  
+Here are some examples of errors that pages.py may catch:  
 '''
 Found duplicate in pages.jsonl  for "page": 3,"id": 6 at lines [412, 453]
 '''
+> The page and ID are duplicated. This probably happens when you cut and paste blocks but forget to update the ID.
+
+'''
+Error: The directory sample-page does not exist.
+'''
+> Make sure you have the correct folder that contains your page.src files.
+
+'''
+Error in pages.tmp on line 411: Line is not inside a data block
+'''
+> Every item in the source file must be in a data block (braces)
+
+'''
+Error in pages.tmp on line 433: Last line inside block ends with a comma
+'''
+> The last line in a block cannot end with a comma.
+
+'''
+Error in pages.tmp on line 440: Line inside block does not have an even number of quotes
+'''
+> The data in the page.src files are in key:value format.  
+> In openHasp the keys are enclosed in quotes, and the non-numeric value is also enclosed in quotes.
+> This means that any key:value pair will have an even number of quotes.
+
 
 ## Useage:
 **Preparation**
