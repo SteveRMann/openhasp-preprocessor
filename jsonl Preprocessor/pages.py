@@ -1,3 +1,5 @@
+# Preprocessor for OpenHASP jsonl files.
+
 import os
 import sys  # For the command line arguments
 
@@ -21,7 +23,7 @@ def replace_values(src_file_path, ini_file_path, out_file_path):
     with open(ini_file_path, 'r') as sub_file:
         for line in sub_file:
             line = line.strip()
-            if line:  # Ignore blank lines
+            if line and not line.startswith('#'):  # Ignore blank lines and lines starting with a comment
                 key, value = line.split(':')
                 replacements[key] = value
 

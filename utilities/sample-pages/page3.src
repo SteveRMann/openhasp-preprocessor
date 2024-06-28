@@ -1,0 +1,85 @@
+{
+"comment":" ------------------------------ Page 3 ------------------------------"
+}
+
+{
+"comment": "----- Tracking",
+  "page": 3,
+  "id": 1,
+  "x": 180,
+  "y": 5,
+  "w": 120,
+  "h": 40,
+  "obj": "label",
+  "text": "Tracking",
+  "align": "center",
+  "text_color": "#FFFFFF"
+}
+
+{
+"comment":"----- Kim Zone -----",
+  "page":3,
+  "id":2,
+  "x":@Label-column,
+  "y":@Kim-row1,
+  "w":120,
+  "h":40,
+  "obj":"label",
+  "text":"Kim zone"
+}
+
+{
+"comment":"----- Kim Zone Data",
+  "page":3,
+  "id":3,
+  "obj":"label",
+  "x":@Data-column,
+  "y":@Kim-row1,
+  "w":240,
+  "h":40,
+  "text":"p3b3",
+  "align":0,
+  "text_color":"#FFFFFF"
+}
+
+{
+"comment":"----- Kim Address -----",
+  "page":3,
+  "id":4,
+  "obj":"label",
+  "x":@Label-column,
+  "y":@Kim-row2,
+  "w":165,
+  "h":40,
+  "text":"Kim Address:",
+  "align":0
+}
+
+{
+"comment":"----- Kim Address Data",
+  "page":3,
+  "id":5,
+  "obj":"label",
+  "x":@Data-column,
+  "y":@Kim-row2,
+  "w":240,
+  "h":40,
+  "text":"p3b5",
+  "align":0,
+  "text_color":"#FFFFFF"
+}
+
+{
+"comment":"----- Blue Horizontal Line",
+  "page": 3,
+  "id": 6,
+  "obj": "btn",
+  "x": 0,
+  "y": @BlueLine-row,
+  "w": 470,
+  "h": 2,
+  "bg_color": "blue",
+  "bg_opa": 255,
+  "border_width": 0
+}
+
