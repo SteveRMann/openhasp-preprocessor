@@ -21,6 +21,46 @@ def merge_files(src_dir, output_file_path):
                     # Write a newline to separate the contents of different files
                     output_file.write('\n')
 
+def check_custom_format(file_path):
+    # Open the file
+    with open(file_path, 'r') as file:
+        # Initialize a flag to indicate whether we're inside a block
+        inside_block = False
+        # Initialize a list to hold the lines of the current block
+        block_lines = []
+        # Read the file line by line
+        for line_number, line in enumerate(file, start=1):
+            # Check if the line starts a block
+            if line.strip() == '{':
+                inside_block = True
+                block_lines = []
+            # Check if the line ends a block
+            elif line.strip() == '}':
+                inside_block = False
+                # Check all lines of the block except the last one
+                for i in range(len(block_lines) - 1):
+                    if not block_lines[i].strip().endswith(','):
+                        print(f"Error in {file_path} on line {line_number - len(block_lines) + i}: Line inside block does not end with a comma")
+                        sys.exit(1)
+                    # Check for even number of quotes
+                    if block_lines[i].count('"') % 2 != 0:
+                        print(f"Error in {file_path} on line {line_number - len(block_lines) + i}: Line inside block does not have an even number of quotes")
+                        sys.exit(1)
+                # Check the last line of the block
+                if block_lines and block_lines[-1].strip().endswith(','):
+                    print(f"Error in {file_path} on line {line_number - 1}: Last line inside block ends with a comma")
+                    sys.exit(1)
+                # Check for even number of quotes in the last line
+                if block_lines and block_lines[-1].count('"') % 2 != 0:
+                    print(f"Error in {file_path} on line {line_number - 1}: Last line inside block does not have an even number of quotes")
+                    sys.exit(1)
+            # If we're inside a block, add the line to the block lines
+            elif inside_block:
+                block_lines.append(line)
+
+
+                    
+
 def replace_values(src_file_path, ini_file_path, out_file_path):
     # Read the substitutions file and build a dictionary of replacements
     replacements = {}
@@ -82,6 +122,7 @@ if not os.path.isdir(src_dir):
     
 # Run the functions
 merge_files(src_dir, 'pages.src')  # src_dir, output_file_path
+check_custom_format('pages.src')
 replace_values('pages.src', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
 os.remove('pages.src')  # Delete the 'pages.src' file
 check_duplicates('pages.jsonl') # file_path
