@@ -104,7 +104,8 @@ def check_duplicates(file_path):
     # Check for duplicates
     for key, line_numbers in occurrences.items():
         if len(line_numbers) > 1:
-            print(f'Found duplicate for {key} at lines {line_numbers}')
+            print(f'Found duplicate in {file_path}  for {key} at lines {line_numbers}')
+            sys.exit(1)
 
 # Check if a command-line argument has been provided
 if len(sys.argv) < 2 or sys.argv[1] in ['help', '?']:
