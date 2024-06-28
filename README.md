@@ -68,6 +68,7 @@ make a single change in the pages.ini file.
 2. Create a variables key:value file named **pages.ini**  
 Example:  
 ```
+# Page 1
 @p1-labels:10
 @p1-values:160
 @p1-row1:180
@@ -75,6 +76,7 @@ Example:
 @p1-row3:260
 @p1-row4:300
 
+#Page 2
 @p2-labels:10
 @p2-values:180
 @p2-row1:80
@@ -83,6 +85,13 @@ Example:
 @p2-row4:200
 @p2-row5:240
 ```
+
+**Notes**  
+```
+1. Comments starting with a # are ignored in the processing  
+```
+
+
 **Execution**
 1. In a cmd window, CD to the folder that contains **pages.py** and **pages.ini**.  
 2. Run: python pages.py sample-pages  
