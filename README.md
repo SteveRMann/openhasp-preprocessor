@@ -3,7 +3,13 @@
 ----
 
 # python.py - an openhasp-preprocessor.
-A preprocessor for the pages.jsonl file.  This allows you to make the page definitions in separate files and use variables to define variables for x: and y: positions or colors.  Really anything can be substituted globally.
+A preprocessor for the pages.jsonl file.  This allows you to make page definitions in separate files and use
+variables to define values for x: and y: positions or colors.  
+
+The script also checks for some syntax errors.  When you get an error the message will include the intermediate filename, pages.tmp, and the line number causing the error.
+'''
+Found duplicate in pages.jsonl  for "page": 3,"id": 6 at lines [412, 453]
+'''
 
 ## Useage:
 **Preparation**
