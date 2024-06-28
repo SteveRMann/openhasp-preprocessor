@@ -22,6 +22,27 @@ def merge_files(src_dir, output_file_path):
                     output_file.write('\n')
 
 
+def expand_file(file_path):
+    # Read the entire file into memory
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    # Open the file in write mode to overwrite it
+    with open(file_path, 'w') as file:
+        for line in lines:
+            line = line.strip()
+            if line:
+                if line.startswith("{"):
+                    line = line.replace("{", "{\n", 1)
+                if line.endswith("}"):
+                    line = line.replace("}", "\n}\n\n", 1)
+                line = line.replace(",", ",\n  ")
+                file.write(line)
+
+
+
+
+
 def check_custom_format(file_path):
     # Open the file
     with open(file_path, 'r') as file:
@@ -109,7 +130,7 @@ def check_duplicates(file_path):
     # Check for duplicates
     for key, line_numbers in occurrences.items():
         if len(line_numbers) > 1:
-            print(f'Found duplicate in {file_path}  for {key} at lines {line_numbers}')
+            print(f'Error in {file_path} - Found duplicate for {key} at lines {line_numbers}')
             sys.exit(1)
 
 # Check if a command-line argument has been provided
@@ -128,6 +149,7 @@ if not os.path.isdir(src_dir):
     
 # Run the functions
 merge_files(src_dir, 'pages.tmp')  # src_dir, output_file_path
+expand_file('pages.tmp')
 check_custom_format('pages.tmp')
 replace_values('pages.tmp', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
 os.remove('pages.tmp')  # Delete the 'pages.tmp' file
