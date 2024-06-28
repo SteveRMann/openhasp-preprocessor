@@ -12,8 +12,12 @@ def merge_files(src_dir, output_file_path):
             if filename.endswith('.src'):
                 # Open the source file
                 with open(os.path.join(src_dir, filename), 'r') as src_file:
-                    # Write the contents of the source file to the output file
-                    output_file.write(src_file.read())
+                    # Read the source file line by line
+                    for line in src_file:
+                        # Skip lines that begin with #
+                        if not line.startswith('#'):
+                            # Write the line to the output file
+                            output_file.write(line)
                     # Write a newline to separate the contents of different files
                     output_file.write('\n')
 

@@ -14,6 +14,9 @@
   "align": "center",
   "text_color": "#FFFFFF"
 }
+
+# This is a comment line
+# Comment lines are not copied to the intermediate file.
 {
   "comment":"----- Kim Zone -----",
   "page":3,"id":2,
