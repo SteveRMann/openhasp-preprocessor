@@ -98,7 +98,7 @@ Example:
 
 The script pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, then makes the variable substitutions and outputs to the **pages.jsonl** file that you send to the panel.  
 
-## Utilities
+# Utilities
 These are utilities I developed for testing purposes. They are just kept here for archival purposes.
 
 # compress.py 
