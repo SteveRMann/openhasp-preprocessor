@@ -82,7 +82,7 @@ For example **page2.src** is the **jsonl** code for everything that will appear 
 1. The x: and y: positions are populated with variables named @p2-labels, @p2-values and @p2-row1.  
 The file: pages.ini (below) is where the variables are defined. (You can use any variable names).
 
-Note- Variablenames are case-insensitive.
+Note- Variable names are case-insensitive.
 
 Sounds like a lot of work, but it makes moving whole columns or rows of objects easy.
 For example if I want all of my object labels to start on a different X position, I only have to
