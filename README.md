@@ -1,17 +1,10 @@
-<h3 align="center">Telnet server for ESP8266 / ESP32</h3>
+<h3 align="center">OpenHASP Preprocessor</h3>
 
 ---
 
-<p align="center"> Cloning the serial port via Telnet.
+<p align="center"> Making pages.jsonl manageable.
     <br> 
 </p>
-
-<div align="center">
-
-  [![GitHub Issues](https://img.shields.io/github/issues/yasheena/telnetspy.svg)](https://github.com/yasheena/telnetspy/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yasheena/telnetspy.svg)](https://github.com/yasheena/telnetspy/pulls)
-
-</div>
 
 ## 📝 Table of Contents
 - [Description](#description)
@@ -23,9 +16,9 @@
 
 ## 🎈 Description <a name = "description"></a>
 
-- This module allows you to do "debugging over the air". So if you already use ArduinoOTA, this is a helpful extension for wireless development. Use ```TelnetSpy``` instead of ```Serial``` to send data to the serial port and a copy to a Telnet connection. 
-- There is a circular buffer which allows to store the data while the Telnet connection is not established. So it's possible to collect data even when the WiFi and Telnet connections are not yet established.
-- It's also possible to create a Telnet session only if it is neccessary: then you will get the already collected data as far as it is still stored in the circular buffer. Data sent from Telnet terminal to ESP8266 / ESP32 will be handled as data received by serial port.
+- This Python script allows you to manage each page of an OpenHASP display in separate files.
+- The script also looks for possible errors that would prevent your page from loading into the panel.
+- Managing page files is enhanced with comments and variables substitutions.
 - It is also possible to use more than one instance of TelnetSpy. For example - To send control information on the first instance and data dumps on the second instance.
 
 ## 🚀 Usage <a name = "usage"></a>
