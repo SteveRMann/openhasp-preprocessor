@@ -1,0 +1,642 @@
+{
+"comment":"https://www.openhasp.com/0.7.0/design/objects/"
+}
+{
+"comment":" ----------------------- Page 0 - Navigation  ------------------------"
+}
+{
+"comment":"----- Previous Page",
+"page":0,
+"id":1,
+"obj":"btn",
+"action":{"down": "page prev"},
+"x":150,
+"y":440,
+"w":49,
+"h":38,
+"bg_color":"blue",
+"text":"\uE141",
+"text_color":"#FFFFFF",
+"radius":0,
+"border_side":0,
+"text_font":24
+}
+{
+"comment":"----- Home Page",
+"page":0,
+"id":2,
+"obj":"btn",
+"action":{"down": "page back"},
+"x":200,
+"y":440,
+"w":80,
+"h":38,
+"bg_color":"blue",
+"text":"\uE2DC",
+"text_color":"#FFFFFF",
+"radius":0,
+"border_side":0,
+"text_font":24
+}
+{
+"comment":"----- Next Page",
+"page":0,
+"id":3,
+"obj":"btn",
+"action":{"down": "page next"},
+"x":281,
+"y":440,
+"w":49,
+"h":38,
+"bg_color":"blue",
+"text":"\uE142",
+"text_color":"#FFFFFF",
+"radius":0,
+"border_side":0,
+"text_font":24
+}
+{
+"comment":"----- time",
+"page":0,
+"id":5,
+"obj":"label",
+"x":35,
+"y":440,
+"h":35,
+"w":75,
+"text":"00:00",
+"align":0,
+"text_color":"#FFFFFF",
+"text_font":30
+}
+{
+"comment":"----- Page Number",
+"page":0,
+"id":4,
+"obj":"label",
+"x":360,
+"y":440,
+"w":40,
+"h":38,
+"text":"00",
+"align":1,
+"text_color":"#FFFFFF",
+"text_font":30
+}
+{
+"comment":" ------------------------------ Page 1 ------------------------------"
+}
+{
+"comment":"----- Dexcom Value",
+"page":1,
+"id":1,
+"x":10,
+"y":0,
+"w":100,
+"h":40,
+"obj":"label",
+"text":"p1b1",
+"align":0,
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Dexcom Trend",
+"page":1,
+"id":18,
+"obj":"label",
+"x":110,
+"y":0,
+"w":240,
+"h":40,
+"text":"p1b18",
+"align":0,
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Light button",
+"page":1,
+"id":2,
+"obj":"btn",
+"x":10,
+"y":50,
+"w":105,
+"h":90,
+"toggle":true,
+"text":"\uE335",
+"text_font":48,
+"mode":"break",
+"align":1
+}
+{
+"comment":"----- Light label",
+"page":1,
+"id":9,
+"obj":"label",
+"X":10,
+"y":119,
+"w":105,
+"h":35,
+"text":"Office",
+"align":1,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- RSSI label -----",
+"page":1,
+"id":19,
+"obj":"label",
+"x":10,
+"y":180,
+"h":40,
+"w":80,
+"text":"RSSI:",
+"align":0,
+"text_font": 35,
+"bg_color":"#2C3E50",
+"bg_opa": 255,
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- RSSI icon",
+"page":1,
+"id":4,
+"obj":"btn",
+"X":100,
+"y":180,
+"w":30,
+"h":40,
+"text_font":"2",
+"text":"\uE5A9",
+"text_color":"gray",
+"bg_opa":0,
+"border_width":0
+}
+{
+"comment":"----- RSSI value",
+"page":1,
+"id":5,
+"obj":"label",
+"X":160,
+"y":180,
+"w":150,
+"h":40,
+"text":"p1b5",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Green Horizontal Line",
+"page": 1,
+"id": 6,
+"obj": "btn",
+"x": 10,
+"y": 45,
+"w": 470,
+"h": 2,
+"bg_color": "green",
+"bg_opa": 255,
+"border_width": 0
+}
+{
+"comment":"----- Blue Horizontal Line",
+"page": 1,
+"id": 7,
+"obj": "btn",
+"x": 10,
+"y": 160,
+"w": 470,
+"h": 2,
+"bg_color": "blue",
+"bg_opa": 255,
+"border_width": 0
+}
+{
+"comment":"----- Outside label -----",
+"page":1,
+"id":10,
+"obj":"label",
+"x":10,
+"y":220,
+"h":40,
+"w":120,
+"text":"Outside:",
+"align":0,
+"text_font": 35,
+"bg_color":"#2C3E50",
+"bg_opa": 255,
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Outside Temperature Data",
+"page":1,
+"id":11,
+"obj":"label",
+"x":160,
+"y":220,
+"h":50,
+"w":200,
+"text":"p1b11",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Upstairs label -----",
+"page":1,
+"id":12,
+"obj":"label",
+"x":10,
+"y":260,
+"h":50,
+"w":200,
+"text":"Upstairs:",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Upstairs Temperature Data",
+"page":1,
+"id":13,
+"obj":"label",
+"x":160,
+"y":260,
+"h":50,
+"w":200,
+"text":"p1b13",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":" ------------------------- Page 11 Dropdown test -------------------------"
+}
+{
+"comment":"----- Dropdown",
+"page":11,
+"id":1,
+"obj":"dropdown",
+"toggle":true,
+"x":250,
+"y":150,
+"w":200,
+"h":60,
+"options":"Office\nDesklight\nWorklight"
+}
+{
+"comment":"----- time",
+"page":11,
+"id":2,
+"obj":"label",
+"x":3,
+"y":5,
+"h":35,
+"w":75,
+"text":"00:00",
+"align":0,
+"bg_color":"#2C3E50"
+}
+{
+"comment":"----- temperature",
+"page":11,
+"id":3,
+"obj":"label",
+"x":370,
+"y":5,
+"h":35,
+"w":75,
+"text":"000.0",
+"align":2,
+"bg_color":"#2C3E50"
+}
+{
+"comment":"Degrees F",
+"page":11,
+"id":4,
+"obj":"label",
+"x":445,
+"y":5,
+"h":35,
+"w":45,
+"text":"°F",
+"align":1,
+"bg_color":"#2C3E50"
+}
+{
+"comment":"Internal Relay",
+"page":11,
+"id":5,
+"obj":"switch",
+"x":30,
+"y":150,
+"w":180,
+"h":75,
+"radius":40,
+"radius20":40,
+"groupid":1
+}
+{
+"comment":" ------------------------- Page 12 Experiments -------------------------"
+}
+{
+"comment":"----- Large button",
+"page":12,
+"id":1,
+"obj":"btn",
+"x":120,
+"y":100,
+"w":240,
+"h":240,
+"text_color":"white",
+"text":"Office Light",
+"align":2,
+"value_font":22,
+"radius":0,
+"border_side":0
+}
+{
+"comment":"----- Rounded Rectangle",
+"page":12,
+"id":2,
+"obj":"obj",
+"x":5,
+"y":40,
+"w":200,
+"h":80,
+"click":0
+}
+{
+"comment":"----- Colored text",
+"page":12,
+"id":3,
+"obj":"label",
+"x":15,
+"y":54,
+"w":150,
+"h":50,
+"text":"#0000FF \uE64A# #FF0000 Office# #008000 light#!"
+}
+{
+"comment":" ------------------------- Page 2 Temperatures -------------------------"
+}
+{
+"comment":"----- PageTitle",
+"page":2,
+"id":1,
+"obj":"btn",
+"x":120,
+"y":0,
+"w":240,
+"h":40,
+"text":"Temperatures",
+"align":2,
+"value_font":22,
+"bg_opa":0,
+"text_color":"gray",
+"radius":0,
+"border_side":0
+}
+{
+"comment":"----- Green Horizontal Line",
+"page": 2,
+"id": 12,
+"obj": "btn",
+"x": 10,
+"y": 45,
+"w": 470,
+"h": 2,
+"bg_color": "green",
+"bg_opa": 255,
+"border_width": 0
+}
+{
+"comment":"----- Attic label",
+"page":2,
+"id":2,
+"obj":"label",
+"x":10,
+"y":80,
+"h":50,
+"w":200,
+"text":"Attic:",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Attic Temperature data",
+"page":2,
+"id":3,
+"obj":"label",
+"x":180,
+"y":80,
+"h":50,
+"w":200,
+"text":"p2b3",
+"align":0,
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Outside label",
+"page":2,
+"id":4,
+"obj":"label",
+"x":10,
+"y":120,
+"h":50,
+"w":200,
+"text":"Outside:",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Outside Temperature Data",
+"page":2,
+"id":5,
+"obj":"label",
+"x":180,
+"y":120,
+"h":50,
+"w":200,
+"text":"p2b5",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Upstairs label",
+"page":2,
+"id":6,
+"obj":"label",
+"x":10,
+"y":160,
+"h":50,
+"w":200,
+"text":"Upstairs:",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Upstairs Temperature Data",
+"page":2,
+"id":7,
+"obj":"label",
+"x":180,
+"y":160,
+"h":50,
+"w":200,
+"text":"p2b7",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Downstairs label",
+"page":2,
+"id":8,
+"obj":"label",
+"x":10,
+"y":200,
+"h":50,
+"w":200,
+"text":"Downstairs:",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Downstairs Temperature Data",
+"page":2,
+"id":9,
+"obj":"label",
+"x":180,
+"y":200,
+"h":50,
+"w":200,
+"text":"p2b9",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Basement label",
+"page":2,
+"id":10,
+"obj":"label",
+"x":10,
+"y":240,
+"h":50,
+"w":200,
+"text":"Basement:",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Basement Temperature Data",
+"page":2,
+"id":11,
+"obj":"label",
+"x":180,
+"y":240,
+"h":50,
+"w":200,
+"text":"p2b11",
+"align":0,
+"bg_color":"#2C3E50",
+"text_color":"#FFFFFF"
+}
+{
+"comment":" ------------------------------ Page 3 ------------------------------"
+}
+{
+"comment": "----- Tracking",
+"page": 3,
+"id": 1,
+"x": 180,
+"y": 5,
+"w": 120,
+"h": 40,
+"obj": "label",
+"text": "Tracking",
+"align": "center",
+"text_color": "#FFFFFF"
+}
+{
+"comment":"----- Blue Horizontal Line",
+"page": 3,
+"id": 7,
+"obj": "btn",
+"x": 0,
+"y": 160,
+"w": 470,
+"h": 2,
+"bg_color": "blue",
+"bg_opa": 255,
+"border_width": 0
+}
+{
+"comment":"----- Kim Zone -----",
+"page":3,
+"id":2,
+"x":10,
+"y":60,
+"w":120,
+"h":40,
+"obj":"label",
+"text":"Kim:"
+}
+{
+"comment":"----- Kim Zone Data",
+"page":3,
+"id":3,
+"obj":"label",
+"x":190,
+"y":60,
+"w":240,
+"h":40,
+"text":"p3b3",
+"align":0,
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Kim Address Data",
+"page":3,
+"id":5,
+"obj":"label",
+"x":10,
+"y":100,
+"w":240,
+"h":40,
+"text":"p3b5",
+"align":0,
+"text_color":"#FFFFFF"
+}
+{
+"comment":"----- Blue Horizontal Line",
+"page": 3,
+"id": 6,
+"obj": "btn",
+"x": 0,
+"y": 60,
+"w": 470,
+"h": 2,
+"bg_color": "blue",
+"bg_opa": 255,
+"border_width": 0
+}
+{
+"comment":" ------------------------- Page 4 Image -------------------------"
+}
+{
+"page":4,
+"id":1,
+"obj":"img",
+"src":"L:/steph-kim-240x240.png",
+"x":120,
+"y":120
+}

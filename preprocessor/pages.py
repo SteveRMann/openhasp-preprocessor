@@ -2,6 +2,7 @@
 
 import os
 import sys  # For the command line arguments
+import re  # In the Replace_Values function.
 
 def merge_files(src_dir, output_file_path):
     # Open the output file
@@ -150,7 +151,8 @@ def replace_values(src_file_path, ini_file_path, out_file_path):
     with open(src_file_path, 'r') as src_file, open(out_file_path, 'w') as out_file:
         for line in src_file:
             for key, value in replacements.items():
-                line = line.replace(key, value)
+                # Perform case-insensitive replacement using re.sub
+                line = re.sub(re.escape(key), value, line, flags=re.IGNORECASE)
             out_file.write(line)
 
     # Check the output file for lines containing '@'
@@ -158,6 +160,8 @@ def replace_values(src_file_path, ini_file_path, out_file_path):
         for line_number, line in enumerate(out_file, start=1):
             if '@' in line:
                 print(f'Found "@" in line {line_number}: {line.strip()}')
+
+
 
 
 def chkduplicates(file_path):
