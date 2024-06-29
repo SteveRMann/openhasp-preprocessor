@@ -36,11 +36,7 @@ def expand_file(file_path):
                     line = line.replace("{", "{\n  ", 1)
                 if line.endswith("}"):
                     line = line.replace("}", "\n}\n\n", 1)
-                #if line.startswith('"page"') or line.startswith('"id"'):
-                #    # Remove the newline at the end of the line
-                #    line = line.rstrip('\n')
-                else:
-                    line = line.replace(",", ",\n  ")
+                line = line.replace(",", ",\n  ")
                 file.write(line)
 
 
