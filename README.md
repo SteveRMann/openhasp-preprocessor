@@ -10,6 +10,8 @@
 - [Description](#description)
 - [Usage](#usage)
   - [Preparation](#preparation)
+  - [Execution](#execution)
+- [Errors](#errors) 
 - [Utilities](#utilities)
 
 
@@ -113,6 +115,18 @@ Example:
 2. Run: python pages.py sample-pages  
 
 The script pages.py will wrap all this up.  First it merges all of your page.src files into a single intermediate file, then makes the variable substitutions and outputs to the **pages.jsonl** file that you send to the panel.  
+
+### 🎈 Errors <a name = "errors"></a>
+
+Duplicate page:id values
+Last line inside block does not have an even number of quotes
+Last line inside block ends with a comma
+Line inside block does not end with a comma
+Line inside block does not have an even 
+Line is not inside a data block
+The source directory does not exist
+Unmatched closing brace (no opening brace)
+Unmatched opening brace (no closing brace)
 
 ---
 ## 🚀 Utilities <a name = "utilities"></a>
