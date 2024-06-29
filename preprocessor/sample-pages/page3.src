@@ -30,8 +30,7 @@
 
 
 
-# This is a comment line
-# Comment lines are not copied to the intermediate file.
+############ Kim ##############
 {
   "comment":"----- Kim Zone -----",
   "page":3,"id":2,
@@ -65,3 +64,54 @@
   "bg_opa": 255,
   "border_width": 0
 }
+
+############ Steve ##############
+{
+  "comment":"----- Steve Zone -----",
+  "page":3,"id":8,
+  "x":@Label-column,"y":@Steve-row1,"w":120,"h":40,
+  "obj":"label",
+  "text":"Steve:"
+}
+
+{
+  "comment":"----- Steve Zone Data",
+  "page":3,"id":9,
+  "obj":"label",
+  "x":@Data-column,"y":@Steve-row1,"w":440,"h":40,
+  "text":"p3b9","align":0,"text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Steve Address Data",
+  "page":3,"id":10,
+  "obj":"label",
+  "x":@Label-column,"y":@Steve-row2,"w":440,"h":40,
+  "text":"p3b10","align":0,"text_color":"#FFFFFF"
+}
+
+{
+  "comment":"----- Blue Horizontal Line",
+  "page": 3,"id": 11,
+  "obj": "btn",
+  "x": 0,"y": @BlueLine-row1,"w": 470,"h": 2,
+  "bg_color": "blue",
+  "bg_opa": 255,
+  "border_width": 0
+}
+
+{
+  "comment":"----- Blue Horizontal Line",
+  "page": 3,
+  "id": 12,
+  "obj": "btn",
+  "x": 0,
+  "y": @BlueLine-row3,
+  "w": 470,
+  "h": 2,
+  "bg_color": "blue",
+  "bg_opa": 255,
+  "border_width": 0
+}
+
+#####################################################
