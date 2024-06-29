@@ -33,11 +33,30 @@ def expand_file(file_path):
             line = line.strip()
             if line:
                 if line.startswith("{"):
-                    line = line.replace("{", "{\n", 1)
+                    line = line.replace("{", "{\n  ", 1)
                 if line.endswith("}"):
                     line = line.replace("}", "\n}\n\n", 1)
-                line = line.replace(",", ",\n  ")
+                #if line.startswith('"page"') or line.startswith('"id"'):
+                #    # Remove the newline at the end of the line
+                #    line = line.rstrip('\n')
+                else:
+                    line = line.replace(",", ",\n  ")
                 file.write(line)
+
+
+def remove_blank_lines(file_path):
+    # Read the entire file into memory
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    # Filter out blank lines
+    non_empty_lines = [line.strip() for line in lines if line.strip()]
+
+    # Open the file in write mode to overwrite it
+    with open(file_path, 'w') as file:
+        for line in non_empty_lines:
+            file.write(line + '\n')  # Add a newline after each line
+
 
 
 
@@ -85,6 +104,40 @@ def check_custom_format(file_path):
                 sys.exit(1)
 
 
+
+def check_braces(file_path):
+    # Initialize a counter for the braces and variables to hold the line numbers of the last opening and closing braces
+    brace_counter = 0
+    last_open_brace_line = None
+    last_close_brace_line = 0  # Initialize to 0
+
+    # Open the file
+    with open(file_path, 'r') as file:
+        # Read the file line by line
+        for line_number, line in enumerate(file, start=1):
+            line = line.strip()
+            if line:
+                if line.startswith("{"):
+                    # If there's already an unmatched opening brace, raise an error
+                    if brace_counter > 0:
+                        print(f"Error in {file_path} on line {last_open_brace_line}: Unmatched opening brace (no closing brace)")
+                        return
+                    # Increment the counter and store the line number
+                    brace_counter += 1
+                    last_open_brace_line = line_number
+                elif line.startswith("}"):
+                    # If there's already an unmatched closing brace, raise an error
+                    if brace_counter < 1:
+                        print(f"Error in {file_path} on line {last_close_brace_line + 1}: Unmatched closing brace (no opening brace)")
+                        return
+                    # Decrement the counter and store the line number
+                    brace_counter -= 1
+                    last_close_brace_line = line_number
+
+    # If the counter is positive after reading the entire file, there is an opening brace without a matching closing brace
+    if brace_counter > 0:
+        print(f"Error in {file_path} on line {last_open_brace_line}: Unmatched opening brace (no closing brace)")
+
                     
 
 def replace_values(src_file_path, ini_file_path, out_file_path):
@@ -110,28 +163,38 @@ def replace_values(src_file_path, ini_file_path, out_file_path):
             if '@' in line:
                 print(f'Found "@" in line {line_number}: {line.strip()}')
 
-def check_duplicates(file_path):
-    # Read the file and build a dictionary of line occurrences
-    occurrences = {}
+
+def chkduplicates(file_path):
+    # Initialize a dictionary to hold the page:id pairs and their line numbers
+    page_id_pairs = {}
+
+    # Read the entire file into memory
     with open(file_path, 'r') as file:
+        page = id = None
         for line_number, line in enumerate(file, start=1):
             line = line.strip()
-            if line:  # Ignore blank lines
-                # Check if the line contains a "page" and "id" pair
-                if '"page":' in line and '"id":' in line:
-                    # Build a key from the "page" and "id" values
-                    key = line[line.index('"page":'):line.index('"id":')+len('"id":')+2]
-                    # Add the line number to the occurrences
-                    if key in occurrences:
-                        occurrences[key].append(line_number)
+            if line:
+                if line.startswith("{"):
+                    # Reset page and id at the start of each block
+                    page = id = None
+                elif line.startswith('"page"'):
+                    page = line.split(":")[1].strip().strip(',')
+                elif line.startswith('"id"'):
+                    id = line.split(":")[1].strip().strip(',')
+                if page is not None and id is not None:
+                    # Keep the page and id values in their original order
+                    pair = (page, id)
+                    if pair in page_id_pairs:
+                        print(f"Error in {file_path} on line {line_number}: Duplicate page:id pair {pair}")
+                        print(f"First occurrence was on line {page_id_pairs[pair]}")
+                        sys.exit(1)
                     else:
-                        occurrences[key] = [line_number]
-
-    # Check for duplicates
-    for key, line_numbers in occurrences.items():
-        if len(line_numbers) > 1:
-            print(f'Error in {file_path} - Found duplicate for {key} at lines {line_numbers}')
-            sys.exit(1)
+                        # Store the line number along with the pair
+                        page_id_pairs[pair] = line_number
+                        # Reset page and id for the next pair
+                        page = id = None
+            
+            
 
 # Check if a command-line argument has been provided
 if len(sys.argv) < 2 or sys.argv[1] in ['help', '?']:
@@ -150,7 +213,9 @@ if not os.path.isdir(src_dir):
 # Run the functions
 merge_files(src_dir, 'pages.tmp')  # src_dir, output_file_path
 expand_file('pages.tmp')
+remove_blank_lines("pages.tmp")
 check_custom_format('pages.tmp')
+check_braces('pages.tmp')
 replace_values('pages.tmp', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
 os.remove('pages.tmp')  # Delete the 'pages.tmp' file
-check_duplicates('pages.jsonl') # file_path
+chkduplicates('pages.jsonl')
