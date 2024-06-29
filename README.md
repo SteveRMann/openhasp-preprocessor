@@ -9,6 +9,7 @@ variables to define values for x: and y: positions or colors.
 The script also checks for some syntax errors.  
 When you get an error the message will include the intermediate filename, for example: pages.tmp, and the line number causing the error.  
 Here are some examples of errors that pages.py may catch:  
+  
 '''
 Found duplicate in pages.jsonl  for "page": 3,"id": 6 at lines [412, 453]
 '''
