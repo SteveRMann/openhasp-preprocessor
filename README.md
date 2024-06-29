@@ -128,6 +128,8 @@ The script pages.py will wrap all this up.  First it merges all of your page.src
 
 Duplicate page:id values
 
+Duplicate pages.ini variable names
+
 Last line inside block does not have an even number of quotes
 
 Last line inside block ends with a comma
