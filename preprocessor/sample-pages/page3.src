@@ -52,7 +52,7 @@
   "comment":"----- Kim Address Data",
   "page":3,"id":5,
   "obj":"label",
-  "x":@Label-column,"y":@Kim-row2,"w":240,"h":40,
+  "x":@Label-column,"y":@Kim-row2,"w":440,"h":40,
   "text":"p3b5","align":0,"text_color":"#FFFFFF"
 }
 
