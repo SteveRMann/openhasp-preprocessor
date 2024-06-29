@@ -119,6 +119,7 @@ The script pages.py will wrap all this up.  First it merges all of your page.src
 ### 🎈 Errors <a name = "errors"></a>
 
 Duplicate page:id values
+
 Last line inside block does not have an even number of quotes
 
 Last line inside block ends with a comma
