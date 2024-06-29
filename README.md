@@ -120,13 +120,21 @@ The script pages.py will wrap all this up.  First it merges all of your page.src
 
 Duplicate page:id values
 Last line inside block does not have an even number of quotes
+
 Last line inside block ends with a comma
+
 Line inside block does not end with a comma
+
 Line inside block does not have an even 
+
 Line is not inside a data block
+
 The source directory does not exist
+
 Unmatched closing brace (no opening brace)
+
 Unmatched opening brace (no closing brace)
+
 
 ---
 ## 🚀 Utilities <a name = "utilities"></a>
