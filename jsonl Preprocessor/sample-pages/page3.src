@@ -14,6 +14,21 @@
   "align": "center",
   "text_color": "#FFFFFF"
 }
+{
+  "comment":"----- Blue Horizontal Line",
+  "page": 3,
+  "id": 7,
+  "obj": "btn",
+  "x": 0,
+  "y": @BlueLine-row2,
+  "w": 470,
+  "h": 2,
+  "bg_color": "blue",
+  "bg_opa": 255,
+  "border_width": 0
+}
+
+
 
 # This is a comment line
 # Comment lines are not copied to the intermediate file.
@@ -22,7 +37,7 @@
   "page":3,"id":2,
   "x":@Label-column,"y":@Kim-row1,"w":120,"h":40,
   "obj":"label",
-  "text":"Kim zone"
+  "text":"Kim:"
 }
 
 {
@@ -34,18 +49,10 @@
 }
 
 {
-  "comment":"----- Kim Address -----",
-  "page":3,"id":4,
-  "obj":"label",
-  "x":@Label-column,"y":@Kim-row2,"w":165,"h":40,
-  "text":"Kim Address:","align":0
-}
-
-{
   "comment":"----- Kim Address Data",
   "page":3,"id":5,
   "obj":"label",
-  "x":@Data-column,"y":@Kim-row2,"w":240,"h":40,
+  "x":@Label-column,"y":@Kim-row2,"w":240,"h":40,
   "text":"p3b5","align":0,"text_color":"#FFFFFF"
 }
 
@@ -53,7 +60,7 @@
   "comment":"----- Blue Horizontal Line",
   "page": 3,"id": 6,
   "obj": "btn",
-  "x": 0,"y": @BlueLine-row,"w": 470,"h": 2,
+  "x": 0,"y": @BlueLine-row1,"w": 470,"h": 2,
   "bg_color": "blue",
   "bg_opa": 255,
   "border_width": 0
