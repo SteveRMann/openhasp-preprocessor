@@ -44,7 +44,7 @@
   "comment":"----- Kim Zone Data",
   "page":3,"id":3,
   "obj":"label",
-  "x":@Data-column,"y":@Kim-row1,"w":240,"h":40,
+  "x":@Data-column,"y":@Kim-row1,"w":440,"h":40,
   "text":"p3b3","align":0,"text_color":"#FFFFFF"
 }
 

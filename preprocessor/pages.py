@@ -4,6 +4,42 @@ import os
 import sys  # For the command line arguments
 import re  # In the Replace_Values function.
 
+# import defaultdict from collections to keep track of line occurrences
+from collections import defaultdict
+
+
+def chk_ini_file(file_path):
+    # Check if the pages.ini file exists
+    if not os.path.isfile(file_path):
+        print(f'Error: {file_path} not found.')
+        sys.exit(1)
+  
+
+    # Use defaultdict(list) to store each line and the line numbers where it appears.  
+    line_occurrences = defaultdict(list)
+    
+    with open(file_path, 'r') as f:
+        # Read the file line-by-line, strip whitespace, and record the line numbers where each line appears.
+        for line_num, line in enumerate(f, start=1):
+            # normalizes the input by stripping leading/trailing whitespace and converting the line to lowercase
+            normalized_line = line.strip().lower()
+            # print(f"Line {line_num}: '{normalized_line}'")  # Debug print
+
+            if normalized_line and not normalized_line.startswith('#'):  # Ignore empty lines and comments
+                line_occurrences[normalized_line].append(line_num)
+
+    duplicates = {line: nums for line, nums in line_occurrences.items() if len(nums) > 1}
+    
+    if not duplicates:
+        pass  # Placeholder for no-action
+    else:
+        print(f"Error: Duplicate lines found in {file_path}:")
+        for line, positions in duplicates.items():
+            print(f"'{line}' found at lines: {positions}")
+        sys.exit(1)  # Exit if duplicates are found
+
+
+
 def merge_files(src_dir, output_file_path):
     # Open the output file
     with open(output_file_path, 'w') as output_file:
@@ -210,7 +246,9 @@ if not os.path.isdir(src_dir):
     print(f'Error: The directory {src_dir} does not exist.')
     sys.exit(1)
     
+    
 # Run the functions
+chk_ini_file('pages.ini')
 merge_files(src_dir, 'pages.tmp')  # src_dir, output_file_path
 expand_file('pages.tmp')
 remove_blank_lines("pages.tmp")
