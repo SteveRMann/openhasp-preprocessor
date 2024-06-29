@@ -9,9 +9,8 @@
 ## 📝 Table of Contents
 - [Description](#description)
 - [Usage](#usage)
-  - [General](#general)
-  - [Functions](#functions)
-- [License](#license)
+  - [Preparation](#preperation)
+  - [Utilities](#utilities)
 
 
 ## 🎈 Description <a name = "description"></a>
@@ -26,7 +25,7 @@
 
 1. Create a .src file in a pages folder for each page.  
 For example **page2.src** is the **jsonl** code for everything that will appear on page 2.  
-Example:  
+  
 ```
 {
   "comment":" ------------------------- Page 2 - Temperatures -------------------------"
