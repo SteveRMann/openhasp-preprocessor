@@ -10,7 +10,7 @@
 - [Description](#description)
 - [Usage](#usage)
   - [Preparation](#preparation)
-  - [Utilities](#utilities)
+- [Utilities](#utilities)
 
 
 ## 🎈 Description <a name = "description"></a>
@@ -108,7 +108,7 @@ Example:
 ```
 
 
-**Execution**
+**Execution**<a name = "execution"></a>
 1. In a cmd window, CD to the folder that contains **pages.py** and **pages.ini**.  
 2. Run: python pages.py sample-pages  
 
@@ -126,7 +126,6 @@ Compress the input file by removing unnecessary whitespace.
 
 ### expand.py
 
-# expand.py
 Expands the pages.jsonl input file by placing every element on its own line.
 ```Useage:
 > python expand.py sample-pages/page0-compressed.src page0-expanded.src  
