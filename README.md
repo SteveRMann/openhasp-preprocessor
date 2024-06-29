@@ -6,6 +6,11 @@
     <br> 
 </p>
 
+<p align="center"> I am not an expert. Mistake me for one at your own risk.
+    <br> 
+</p>
+
+
 ## 📝 Table of Contents
 - [Description](#description)
 - [Usage](#usage)
