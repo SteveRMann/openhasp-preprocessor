@@ -9,33 +9,34 @@ from collections import defaultdict
 
 
 def chk_ini_file(file_path):
-    # Check if the pages.ini file exists
+    # Check if the file exists
     if not os.path.isfile(file_path):
         print(f'Error: {file_path} not found.')
         sys.exit(1)
   
-
-    # Use defaultdict(list) to store each line and the line numbers where it appears.  
-    line_occurrences = defaultdict(list)
+    # Use defaultdict(list) to store each key and the line numbers where it appears.  
+    key_occurrences = defaultdict(list)
     
     with open(file_path, 'r') as f:
-        # Read the file line-by-line, strip whitespace, and record the line numbers where each line appears.
+        # Read the file line-by-line, strip whitespace, and record the line numbers where each key appears.
         for line_num, line in enumerate(f, start=1):
-            # normalizes the input by stripping leading/trailing whitespace and converting the line to lowercase
-            normalized_line = line.strip().lower()
+            # Normalize the input by stripping leading/trailing whitespace
+            normalized_line = line.strip()
             # print(f"Line {line_num}: '{normalized_line}'")  # Debug print
 
             if normalized_line and not normalized_line.startswith('#'):  # Ignore empty lines and comments
-                line_occurrences[normalized_line].append(line_num)
+                if ':' in normalized_line:
+                    key = normalized_line.split(':')[0].strip().lower()
+                    key_occurrences[key].append(line_num)
 
-    duplicates = {line: nums for line, nums in line_occurrences.items() if len(nums) > 1}
+    duplicates = {key: nums for key, nums in key_occurrences.items() if len(nums) > 1}
     
     if not duplicates:
         pass  # Placeholder for no-action
     else:
-        print(f"Error: Duplicate lines found in {file_path}:")
-        for line, positions in duplicates.items():
-            print(f"'{line}' found at lines: {positions}")
+        print(f"Error: Duplicate keys found in {file_path}:")
+        for key, positions in duplicates.items():
+            print(f"'{key}' found at lines: {positions}")
         sys.exit(1)  # Exit if duplicates are found
 
 
