@@ -50,7 +50,7 @@ def extract_and_sort(input_file, output_file=None):
         if current_page is not None and page != current_page:
             output_lines.append("")  # Add a blank line
         current_page = page
-        output_lines.append(f"Page: {page}, ID: {id}, {comment}")
+        output_lines.append(f"p{page}b{id}, {comment}")
 
     # Write to the output file or display to console
     if output_file:
