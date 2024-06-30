@@ -21,12 +21,6 @@ def extract_and_sort(input_file, output_file=None):
             line = line.strip()
 
             if line:
-                # Extract the comment
-                comment_match = re.search(r'"comment":"(.*?)"', line)
-                if not comment_match:
-                    continue
-                comment = comment_match.group(1)
-
                 # Extract the page
                 page_match = re.search(r'"page":(\d+)', line)
                 if not page_match:
@@ -38,6 +32,10 @@ def extract_and_sort(input_file, output_file=None):
                 if not id_match:
                     continue
                 id = int(id_match.group(1))
+
+                # Extract the comment
+                comment_match = re.search(r'"comment":"(.*?)"', line)
+                comment = comment_match.group(1) if comment_match else ""
 
                 # Append to data list
                 data.append((page, id, comment))
@@ -52,7 +50,6 @@ def extract_and_sort(input_file, output_file=None):
         if current_page is not None and page != current_page:
             output_lines.append("")  # Add a blank line
         current_page = page
-        #output_lines.append(f"Page: {page}, ID: {id}, Comment: {comment}")
         output_lines.append(f"Page: {page}, ID: {id}, {comment}")
 
     # Write to the output file or display to console
@@ -62,8 +59,6 @@ def extract_and_sort(input_file, output_file=None):
     else:
         for line in output_lines:
             print(line)
-
-
 
 
 def main(pagesfolder, output_file=None):
@@ -92,8 +87,6 @@ def main(pagesfolder, output_file=None):
 
     # Remove the temp file
     os.remove(temp_file)
-
-
 
 
 # Ensure that the script can be run as a standalone program.
