@@ -162,9 +162,8 @@ Expands the pages.jsonl input file by placing every element on its own line.
 > python expand.py sample-pages/page0-compressed.src page0-expanded.src  
 ```
 
-### Plate screenshot overlay.psd
-A photoshop tool for designing pages
-
-## page-index.py
+### page-index.py
 Makes an index of all page, ID and comment values in the pages.src files.
 
+### Plate screenshot overlay.psd
+A photoshop tool for designing pages
