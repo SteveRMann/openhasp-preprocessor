@@ -159,7 +159,8 @@ Compress the input file by removing unnecessary whitespace.
 ### expand.py
 Expands the pages.jsonl input file by placing every element on its own line.
 ```Useage:
-> python expand.py sample-pages/page0-compressed.src page0-expanded.src  
+>usage: expand.py [-h] [-o OUTPUT] input_file
+If the output is not specified, the input file is overwritten.
 ```
 
 ### page-index.py
