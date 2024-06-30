@@ -94,24 +94,12 @@
   "comment":"----- Blue Horizontal Line",
   "page": 3,"id": 11,
   "obj": "btn",
-  "x": 0,"y": @BlueLine-row1,"w": 470,"h": 2,
+  "x": 0,"y": @BlueLine-row3,"w": 470,"h": 2,
   "bg_color": "blue",
   "bg_opa": 255,
   "border_width": 0
 }
 
-{
-  "comment":"----- Blue Horizontal Line",
-  "page": 3,
-  "id": 12,
-  "obj": "btn",
-  "x": 0,
-  "y": @BlueLine-row3,
-  "w": 470,
-  "h": 2,
-  "bg_color": "blue",
-  "bg_opa": 255,
-  "border_width": 0
-}
+
 
 #####################################################

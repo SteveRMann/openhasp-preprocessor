@@ -174,15 +174,16 @@ def check_braces(file_path):
 
                     
 
-def replace_values(src_file_path, ini_file_path, out_file_path):
-    # Read the substitutions file and build a dictionary of replacements
+def replace_variables(src_file_path, ini_file_path, out_file_path):
+    # Read the substitutions file and build a dictionary of replacements.
+    # replacements is an empty dictionary to store key-value pairs.
     replacements = {}
     with open(ini_file_path, 'r') as sub_file:
         for line in sub_file:
-            line = line.strip()
-            if line and not line.startswith('#'):  # Ignore blank lines and lines starting with a comment
+            line = line.split('#')[0].strip()  # Ignore in-line comments and strip whitespace
+            if line:  # Ignore blank lines
                 key, value = line.split(':')
-                replacements[key] = value
+                replacements[key.strip()] = value.strip()
 
     # Read the source file, make the replacements, and write the result to the output file
     with open(src_file_path, 'r') as src_file, open(out_file_path, 'w') as out_file:
@@ -193,6 +194,7 @@ def replace_values(src_file_path, ini_file_path, out_file_path):
             out_file.write(line)
 
     # Check the output file for lines containing '@'
+    # If found, then there is an unresolved variable.
     with open(out_file_path, 'r') as out_file:
         for line_number, line in enumerate(out_file, start=1):
             if '@' in line:
@@ -255,6 +257,6 @@ expand_file('pages.tmp')
 remove_blank_lines("pages.tmp")
 check_custom_format('pages.tmp')
 check_braces('pages.tmp')
-replace_values('pages.tmp', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
+replace_variables('pages.tmp', 'pages.ini', 'pages.jsonl') # src_file_path, ini_file_path, out_file_path
 os.remove('pages.tmp')  # Delete the 'pages.tmp' file
 chkduplicates('pages.jsonl')
