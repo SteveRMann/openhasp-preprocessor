@@ -151,19 +151,22 @@ Unmatched opening brace (no closing brace)
 ## 🚀 Utilities <a name = "utilities"></a>
 
 ### compress.py
-
 Compress the input file by removing unnecessary whitespace.
 ```Useage:
 > Usage: python compress.py inputfile outputfile
 ```
 
 ### expand.py
-
 Expands the pages.jsonl input file by placing every element on its own line.
 ```Useage:
 > python expand.py sample-pages/page0-compressed.src page0-expanded.src  
 ```
 
+### page-index.py
+Makes an index of all page, ID and comment values in the pages.src files.
+```Useage:
+python page-index.py [-h] [-o OUTPUT] pagesfolder
+```
+
 ### Plate screenshot overlay.psd
 A photoshop tool for designing pages
-
