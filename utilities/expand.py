@@ -2,7 +2,7 @@
 Expand the jsonl file.
 
 Usage:
-python expand2.py input_file [-o output_file]
+python expand.py input_file [-o output_file]
 """
 
 import sys
