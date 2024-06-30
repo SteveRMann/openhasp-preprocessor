@@ -3,7 +3,7 @@
 }
 
 {
-  "comment":"----- Dexcom Value",
+  "comment":"Dexcom Value",
   "page":1,"id":1,
   "x":10,"y":0,"w":100,"h":40,
   "obj":"label",
@@ -11,7 +11,7 @@
 }
 
 {
-  "comment":"----- Dexcom Trend",
+  "comment":"Dexcom Trend",
   "page":1,"id":18,
   "obj":"label",
   "x":110,"y":0,"w":240,"h":40,
@@ -19,7 +19,7 @@
 }
 
 {
-  "comment":"----- Light button",
+  "comment":"Light button",
   "page":1,"id":2,
   "obj":"btn",
   "x":@p1-labels,"y":50,"w":105,"h":90,
@@ -28,7 +28,7 @@
 }
 
 {
-  "comment":"----- Light label",
+  "comment":"Light label",
   "page":1,"id":9,
   "obj":"label",
   "X":@p1-labels,"y":119,"w":105,"h":35,"text":"Office",
@@ -36,7 +36,7 @@
 }
 
 {
-  "comment":"----- RSSI label -----",
+  "comment":"RSSI label",
   "page":1,"id":19,
   "obj":"label",
   "x":@p1-labels,"y":@p1r1,"h":40,"w":80,
@@ -46,7 +46,7 @@
 }
 
 {
-  "comment":"----- RSSI icon",
+  "comment":"RSSI icon",
   "page":1,"id":4,
   "obj":"btn",
   "X":100,"y":@p1r1,"w":30,"h":40,
@@ -55,7 +55,7 @@
 }
 
 {
-  "comment":"----- RSSI value",
+  "comment":"RSSI value",
   "page":1,"id":5,
   "obj":"label",
   "X":@p1-values,"y":@p1r1,"w":150,"h":40,
@@ -63,7 +63,7 @@
 }
 
 {
-  "comment":"----- Green Horizontal Line",
+  "comment":"Green Horizontal Line",
   "page": 1,"id": 6,
   "obj": "btn",
   "x": 10,"y": 45,"w": 470,"h": 2,
@@ -73,7 +73,7 @@
 }
 
 {
-  "comment":"----- Blue Horizontal Line",
+  "comment":"Blue Horizontal Line",
   "page": 1,"id": 7,
   "obj": "btn",
   "x": 10,"y": 160,"w": 470,"h": 2,
@@ -83,7 +83,7 @@
 }
 
 {
-  "comment":"----- Outside label -----",
+  "comment":"Outside label",
   "page":1,"id":10,
   "obj":"label",
   "x":10,"y":@p1r2,"h":40,"w":120,
@@ -93,7 +93,7 @@
 }
 
 {
-  "comment":"----- Outside Temperature Data",
+  "comment":"Outside Temperature Data",
   "page":1,"id":11,
   "obj":"label",
   "x":@p1-values,"y":@p1r2,"h":50,"w":200,"text":"p1b11","align":0,
@@ -101,7 +101,7 @@
 }
 
 {
-  "comment":"----- Upstairs label -----",
+  "comment":"Upstairs label",
   "page":1,"id":12,
   "obj":"label",
   "x":@p1-labels,"y":@p1r3,"h":50,"w":200,"text":"Upstairs:","align":0,
@@ -109,7 +109,7 @@
 }
 
 {
-  "comment":"----- Upstairs Temperature Data",
+  "comment":"Upstairs Temperature Data",
   "page":1,"id":13,
   "obj":"label",
   "x":@p1-values,"y":@p1r3,"h":50,"w":200,"text":"p1b13","align":0,

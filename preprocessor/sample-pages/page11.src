@@ -2,7 +2,7 @@
   "comment":" ------------------------- Page 11 Dropdown test -------------------------"
 }
 {
-  "comment":"----- Dropdown",
+  "comment":"Dropdown",
   "page":11,"id":1,
   "obj":"dropdown",
   "toggle":true,
@@ -11,7 +11,7 @@
 }
 
 {
-  "comment":"----- time",
+  "comment":"time",
   "page":11,"id":2,
   "obj":"label",
   "x":3,"y":5,"h":35,"w":75,
@@ -20,7 +20,7 @@
 }
 
 {
-  "comment":"----- temperature",
+  "comment":"temperature",
   "page":11,"id":3,
   "obj":"label",
   "x":370,"y":5,"h":35,"w":75,

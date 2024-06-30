@@ -8,7 +8,7 @@
 }
 
 {
-  "comment":"----- Previous Page",
+  "comment":"Previous Page",
   "page":0,
   "id":1,
   "obj":"btn",
@@ -25,7 +25,7 @@
   "text_font":24
 }
 {
-  "comment":"----- Home Page",
+  "comment":"Home Page",
   "page":0,
   "id":2,
   "obj":"btn",
@@ -42,7 +42,7 @@
   "text_font":24
 }
 {
-  "comment":"----- Next Page",
+  "comment":"Next Page",
   "page":0,
   "id":3,
   "obj":"btn",
@@ -60,7 +60,7 @@
 }
 
 {
-  "comment":"----- time",
+  "comment":"time",
   "page":0,
   "id":5,
   "obj":"label",
@@ -75,7 +75,7 @@
 }
 
 {
-  "comment":"----- Page Number",
+  "comment":"Page Number",
   "page":0,
   "id":4,
   "obj":"label",
