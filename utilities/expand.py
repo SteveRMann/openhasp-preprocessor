@@ -2,46 +2,45 @@
 Expand the jsonl file.
 
 Usage:
-python expand2.py file_path
+python expand2.py input_file [-o output_file]
 """
 
 import sys
 import re
 import os
+import argparse
 
-
-# Check if a command-line argument has been provided
-if len(sys.argv) < 2 or sys.argv[1] in ['help', '?']:
-    print('Usage: python expand.py file_path')
-    sys.exit(1)
-                
-# Get the file_path from the command-line arguments
-file_path = sys.argv[1]
-
-# Check if the input file exists
-if not os.path.exists(file_path):
-    print(f"Error: The file {file_path} does not exist.")
-    sys.exit(1)
-    
-    
-    
-def expand_file(file_path):
+def expand_file(input_file, output_file):
     # Read the entire file into memory
-    with open(file_path, 'r') as file:
+    with open(input_file, 'r') as file:
         lines = file.readlines()
 
-    # Open the file in write mode to overwrite it
-    with open(file_path, 'w') as file:
+    # Open the output file in write mode
+    with open(output_file, 'w') as file:
         for line in lines:
             line = line.strip()
             if line:
                 if line.startswith("{"):
-                    line = line.replace("{", "{\n  ", 1)
+                    line = re.sub(r'^{', '{\n  ', line, count=1)
                 if line.endswith("}"):
-                    line = line.replace("}", "\n}\n\n", 1)
-                line = line.replace(",", ",\n  ")
+                    line = re.sub(r'}$', '\n}\n\n', line, count=1)
+                line = re.sub(r',', ',\n  ', line)
                 file.write(line)
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Expand a jsonl file.")
+    parser.add_argument("input_file", help="The input file to be expanded.")
+    parser.add_argument("-o", "--output", help="The output file to write the expanded content to.")
+    
+    args = parser.parse_args()
 
-# Run the function with the command-line arguments
-expand_file(file_path)
+    input_file = args.input_file
+    output_file = args.output if args.output else input_file
+
+    # Check if the input file exists
+    if not os.path.exists(input_file):
+        print(f"Error: The file {input_file} does not exist.")
+        sys.exit(1)
+    
+    # Run the function with the command-line arguments
+    expand_file(input_file, output_file)
