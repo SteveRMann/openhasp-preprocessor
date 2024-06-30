@@ -164,6 +164,9 @@ Expands the pages.jsonl input file by placing every element on its own line.
 
 ### page-index.py
 Makes an index of all page, ID and comment values in the pages.src files.
+```Useage:
+python page-index.py [-h] [-o OUTPUT] pagesfolder
+```
 
 ### Plate screenshot overlay.psd
 A photoshop tool for designing pages
