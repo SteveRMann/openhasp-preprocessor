@@ -3,7 +3,7 @@
 }
 
 {
-  "comment":"----- PageTitle",
+  "comment":"PageTitle",
   "page":2,"id":1,
   "obj":"btn",
   "x":120,"y":0,"w":240,"h":40,
@@ -12,7 +12,7 @@
 }
 
 {
-  "comment":"----- Green Horizontal Line",
+  "comment":"Green Horizontal Line",
   "page": 2,"id": 12,
   "obj": "btn",
   "x": 10,"y": 45,"w": 470,"h": 2,
@@ -22,7 +22,7 @@
 }
 
 {
-  "comment":"----- Attic label",
+  "comment":"Attic label",
   "page":2,"id":2,
   "obj":"label",
   "x":@p2-labels,"y":@p2r1,"h":50,"w":200,"text":"Attic:","align":0,
@@ -30,7 +30,7 @@
 }
 
 {
-  "comment":"----- Attic Temperature data",
+  "comment":"Attic Temperature data",
   "page":2,"id":3,
   "obj":"label",
   "x":@p2-values,"y":@p2r1,"h":50,"w":200,"text":"p2b3","align":0,
@@ -38,7 +38,7 @@
 }
 
 {
-  "comment":"----- Outside label",
+  "comment":"Outside label",
   "page":2,"id":4,
   "obj":"label",
   "x":@p2-labels,"y":@p2r2,"h":50,"w":200,"text":"Outside:","align":0,
@@ -46,7 +46,7 @@
 }
 
 {
-  "comment":"----- Outside Temperature Data",
+  "comment":"Outside Temperature Data",
   "page":2,"id":5,
   "obj":"label",
   "x":@p2-values,"y":@p2r2,"h":50,"w":200,"text":"p2b5","align":0,
@@ -54,7 +54,7 @@
 }
 
 {
-  "comment":"----- Upstairs label",
+  "comment":"Upstairs label",
   "page":2,"id":6,
   "obj":"label",
   "x":@p2-labels,"y":@p2r3,"h":50,"w":200,"text":"Upstairs:","align":0,
@@ -62,7 +62,7 @@
 }
 
 {
-  "comment":"----- Upstairs Temperature Data",
+  "comment":"Upstairs Temperature Data",
   "page":2,"id":7,
   "obj":"label",
   "x":@p2-values,"y":@p2r3,"h":50,"w":200,"text":"p2b7","align":0,
@@ -70,7 +70,7 @@
 }
 
 {
-  "comment":"----- Downstairs label",
+  "comment":"Downstairs label",
   "page":2,"id":8,
   "obj":"label",
   "x":@p2-labels,"y":@p2r4,"h":50,"w":200,"text":"Downstairs:","align":0,
@@ -78,7 +78,7 @@
 }
 
 {
-  "comment":"----- Downstairs Temperature Data",
+  "comment":"Downstairs Temperature Data",
   "page":2,"id":9,
   "obj":"label",
   "x":@p2-values,"y":@p2r4,"h":50,"w":200,"text":"p2b9","align":0,
@@ -86,7 +86,7 @@
 }
 
 {
-  "comment":"----- Basement label",
+  "comment":"Basement label",
   "page":2,"id":10,
   "obj":"label",
   "x":@p2-labels,"y":@p2r5,"h":50,"w":200,"text":"Basement:","align":0,
@@ -94,7 +94,7 @@
 }
 
 {
-  "comment":"----- Basement Temperature Data",
+  "comment":"Basement Temperature Data",
   "page":2,"id":11,
   "obj":"label",
   "x":@p2-values,"y":@p2r5,"h":50,"w":200,"text":"p2b11","align":0,

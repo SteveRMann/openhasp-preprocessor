@@ -4,7 +4,7 @@
 
 
 {
-  "comment":"----- Large button",
+  "comment":"Large button",
   "page":12,"id":1,
   "obj":"btn",
   "x":120,"y":100,"w":240,"h":240,
@@ -16,7 +16,7 @@
 }
 
 {
-  "comment":"----- Rounded Rectangle",
+  "comment":"Rounded Rectangle",
   "page":12,"id":2,
   "obj":"obj",
   "x":5,"y":40,"w":200,"h":80,
@@ -24,7 +24,7 @@
 }
 
 {
-  "comment":"----- Colored text",
+  "comment":"Colored text",
   "page":12,"id":3,
   "obj":"label",
   "x":15,"y":54,"w":150,"h":50,
