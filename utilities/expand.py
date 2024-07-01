@@ -1,16 +1,14 @@
-"""
-Expand the jsonl file.
-
-Usage:
-python expand.py input_file [-o output_file]
-"""
-
-import sys
 import re
 import os
+import sys
 import argparse
 
+
 def expand_file(input_file, output_file):
+    def normalize_id(line):
+        """ Normalize the ID in the line by removing leading zeros. """
+        return re.sub(r'"id":\s*0*(\d+)', r'"id": \1', line)
+
     # Read the entire file into memory
     with open(input_file, 'r') as file:
         lines = file.readlines()
@@ -21,12 +19,21 @@ def expand_file(input_file, output_file):
             line = line.strip()
             if line:
                 if line.startswith("{"):
-                    line = re.sub(r'^{', '{\n  ', line, count=1)
+                    line = re.sub(r'^{', '{\n  ', line, count=1)  # Ignore nested braces
                 if line.endswith("}"):
-                    line = re.sub(r'}$', '\n}\n\n', line, count=1)
-                line = re.sub(r',', ',\n  ', line)
-                file.write(line)
+                    line = re.sub(r'}$', '\n}\n\n', line, count=1)  # Ignore nested braces
+                
+                # Regex to match commas not inside quotes
+                line = re.sub(r',(?=(?:[^"]*"[^"]*")*[^"]*$)', ',\n  ', line)
 
+                # Normalize ID
+                if '"id":' in line:
+                    line = normalize_id(line)
+
+                file.write(line + '\n')
+                
+                
+                
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Expand a jsonl file.")
     parser.add_argument("input_file", help="The input file to be expanded.")
