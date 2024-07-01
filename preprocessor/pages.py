@@ -209,6 +209,66 @@ def chkduplicates(file_path):
 
 
 
+#Makes an index file named "pages.lst" which is an index of page, id and comment key values.
+#
+def make_index(input_file):
+    data = []
+    current_page = None  # Initialize current_page to None
+
+    # Open and read the input file
+    with open(input_file, 'r') as file:
+        content = file.read()
+
+    # Split the content into blocks based on the opening and closing braces
+    blocks = re.findall(r'{.*?}', content, re.DOTALL)
+
+    for block in blocks:
+        # Extract the page if present
+        page_match = re.search(r'"page":\s*(\d+)', block)
+        if page_match:
+            current_page = int(page_match.group(1))  # Update current_page if found
+
+        # Extract the ID
+        id_match = re.search(r'"id":\s*(\d+)', block)
+        if not id_match:
+            continue
+        id = int(id_match.group(1))
+
+        # Extract the comment
+        comment_match = re.search(r'"comment":\s*"([^"]*?)"', block)
+        comment = comment_match.group(1) if comment_match else ""
+
+        # Debugging output to ensure comment is captured
+        #print(f"Extracted - Page: {current_page}, ID: {id}, Comment: '{comment}'")
+
+        # Append to data list with the current_page
+        if current_page is not None:
+            data.append((current_page, id, comment))
+
+    # Sort data by page and id
+    data.sort(key=lambda x: (x[0], x[1]))
+
+    # Prepare output
+    output_lines = []
+    current_page = None
+    for page, id, comment in data:
+        if current_page is not None and page != current_page:
+            output_lines.append("")  # Add a blank line
+        current_page = page
+        output_lines.append(f"p{page}b{id}, {comment}")
+
+    # Define the output file name by appending .lst to the input file name without its current extension
+    base_name = os.path.splitext(input_file)[0]
+    output_file = f"{base_name}.lst"
+
+    # Write to the output file
+    with open(output_file, 'w') as f:
+        f.write("\n".join(output_lines))
+
+
+
+
+
 
 if len(sys.argv) < 2 or sys.argv[1] in ['help', '?']:
     print('Usage: python pages.py src_dir')
@@ -230,3 +290,4 @@ check_braces('pages.tmp')
 replace_variables('pages.tmp', 'pages.ini', 'pages.jsonl')
 os.remove('pages.tmp')
 chkduplicates('pages.jsonl')
+make_index('pages.jsonl')
