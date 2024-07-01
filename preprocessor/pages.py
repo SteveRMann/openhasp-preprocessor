@@ -187,9 +187,10 @@ def chkduplicates(file_path):
                         last_page = page
                 elif inside_block:
                     if line.startswith('"page"'):
-                        page = line.split(":")[1].strip().strip(',')
+                        page = line.split(":")[1].strip().strip(',').strip('"')
                     elif line.startswith('"id"'):
-                        id = line.split(":")[1].strip().strip(',')
+                        # Normalize ID by converting it to an integer
+                        id = int(line.split(":")[1].strip().strip(',').strip('"'))
                     if page is None:
                         page = last_page
                     if page is not None and id is not None:
