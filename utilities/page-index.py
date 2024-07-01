@@ -1,23 +1,16 @@
-# pages-index.py
-# Makes an index of page, ID and comment from the page.src files
-# in the argument folder.
-# Optional:
-#  -o outputfile will write the sorted index to the output file.
-#
-
 import os
 import re
 import sys
 import argparse
 import subprocess
 
-def extract_and_sort(input_file, output_file=None):
+def extract_and_sort(input_file, output_file=None, raw=False):
     data = []
     current_page = None  # Initialize current_page to None
 
     # Open and read the input file
     with open(input_file, 'r') as file:
-        for line in file:
+        for line_number, line in enumerate(file, start=1):
             # Clean the line and remove any trailing whitespace
             line = line.strip()
 
@@ -39,19 +32,24 @@ def extract_and_sort(input_file, output_file=None):
 
                 # Append to data list with the current_page
                 if current_page is not None:
-                    data.append((current_page, id, comment))
+                    data.append((current_page, id, comment, line_number))
 
-    # Sort data by page and id
-    data.sort(key=lambda x: (x[0], x[1]))
+    # Sort data by page and id unless raw flag is set
+    if not raw:
+        data.sort(key=lambda x: (x[0], x[1]))
 
     # Prepare output
     output_lines = []
     current_page = None
-    for page, id, comment in data:
-        if current_page is not None and page != current_page:
-            output_lines.append("")  # Add a blank line
-        current_page = page
-        output_lines.append(f"p{page}b{id}, {comment}")
+    for entry in data:
+        page, id, comment, line_number = entry
+        if raw:
+            output_lines.append(f"p{page}b{id}, line {line_number}, {comment}")
+        else:
+            if current_page is not None and page != current_page:
+                output_lines.append("")  # Add a blank line
+            current_page = page
+            output_lines.append(f"p{page}b{id}, {comment}")
 
     # Write to the output file or display to console
     if output_file:
@@ -62,7 +60,7 @@ def extract_and_sort(input_file, output_file=None):
             print(line)
 
 
-def main(pagesfolder, output_file=None):
+def main(pagesfolder, output_file=None, raw=False):
     temp_file = "pages.tmp"
 
     # Open the temp file to write the combined compressed content
@@ -84,7 +82,7 @@ def main(pagesfolder, output_file=None):
                 os.remove(compressed_file)
 
     # Run the page-index.py function on the combined temp file
-    extract_and_sort(temp_file, output_file)
+    extract_and_sort(temp_file, output_file, raw)
 
     # Remove the temp file
     os.remove(temp_file)
@@ -95,9 +93,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process multiple .src files, compress them, and create an index.")
     parser.add_argument("pagesfolder", help="The folder containing the .src files.")
     parser.add_argument("-o", "--output", help="The output file to write the index to.")
+    parser.add_argument("-r", "--raw", action="store_true", help="If set, the output will not be sorted and will include line numbers.")
     
     # parse the command-line arguments and store them in args.
     args = parser.parse_args()
 
     # Call the main() function.
-    main(args.pagesfolder, args.output)
+    main(args.pagesfolder, args.output, args.raw)
+
