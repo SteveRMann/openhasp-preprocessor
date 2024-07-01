@@ -13,6 +13,7 @@ import subprocess
 
 def extract_and_sort(input_file, output_file=None):
     data = []
+    current_page = None  # Initialize current_page to None
 
     # Open and read the input file
     with open(input_file, 'r') as file:
@@ -21,11 +22,10 @@ def extract_and_sort(input_file, output_file=None):
             line = line.strip()
 
             if line:
-                # Extract the page
+                # Extract the page if present
                 page_match = re.search(r'"page":(\d+)', line)
-                if not page_match:
-                    continue
-                page = int(page_match.group(1))
+                if page_match:
+                    current_page = int(page_match.group(1))  # Update current_page if found
 
                 # Extract the ID
                 id_match = re.search(r'"id":(\d+)', line)
@@ -37,8 +37,9 @@ def extract_and_sort(input_file, output_file=None):
                 comment_match = re.search(r'"comment":"(.*?)"', line)
                 comment = comment_match.group(1) if comment_match else ""
 
-                # Append to data list
-                data.append((page, id, comment))
+                # Append to data list with the current_page
+                if current_page is not None:
+                    data.append((current_page, id, comment))
 
     # Sort data by page and id
     data.sort(key=lambda x: (x[0], x[1]))
