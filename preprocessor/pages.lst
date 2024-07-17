@@ -1,0 +1,60 @@
+p0b1, Previous Page
+p0b2, Home Page
+p0b3, Next Page
+p0b4, Page Number
+p0b5, time
+
+p1b1, Dexcom Value
+p1b2, Light button
+p1b4, RSSI icon
+p1b5, RSSI value
+p1b6, Green Horizontal Line
+p1b7, Blue Horizontal Line
+p1b9, Light label
+p1b10, Outside label
+p1b11, Outside Temperature Data
+p1b12, Upstairs label
+p1b13, Upstairs Temperature Data
+p1b14, Basement label
+p1b15, Basement Temperature Data
+p1b16, Downstairs label
+p1b17, Downstairs Temperature Data
+p1b18, Dexcom Trend
+p1b19, RSSI label
+
+p2b1, PageTitle
+p2b2, Attic label
+p2b3, Attic Temperature data
+p2b4, Outside label
+p2b5, Outside Temperature Data
+p2b6, Upstairs label
+p2b7, Upstairs Temperature Data
+p2b8, Downstairs label
+p2b9, Downstairs Temperature Data
+p2b10, Basement label
+p2b11, Basement Temperature Data
+p2b12, Green Horizontal Line
+
+p3b1, Tracking
+p3b2, Kim Zone
+p3b3, Kim Zone Data
+p3b5, Kim Address Data
+p3b6, Blue Horizontal Line
+p3b7, Blue Horizontal Line
+p3b8, Steve Zone
+p3b9, Steve Zone Data
+p3b10, Steve Address Data
+p3b11, Blue Horizontal Line
+p3b12, Blue Horizontal Line
+
+p4b1, 
+
+p11b1, Dropdown
+p11b2, time
+p11b3, temperature
+p11b4, Degrees F
+p11b5, Internal Relay
+
+p12b1, Large button
+p12b2, Rounded Rectangle
+p12b3, Colored text

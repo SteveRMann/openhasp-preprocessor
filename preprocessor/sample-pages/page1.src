@@ -22,7 +22,7 @@
   "comment":"Light button",
   "page":1,"id":2,
   "obj":"btn",
-  "x":@p1-labels,"y":50,"w":105,"h":90,
+  "x":@p1-labels,"y":55,"w":105,"h":90,
   "toggle":true,
   "text":"\uE335","text_font":48,"mode":"break","align":1
 }
@@ -58,7 +58,7 @@
   "comment":"RSSI value",
   "page":1,"id":5,
   "obj":"label",
-  "X":@p1-values,"y":@p1r1,"w":150,"h":40,
+  "X":@p1-RSSI,"y":@p1r1,"w":150,"h":40,
   "text":"p1b5","align":0,"bg_color":"#2C3E50","text_color":"#FFFFFF"
 }
 
@@ -118,3 +118,35 @@
 
 
 
+{
+  "comment":"Basement label",
+  "page":1,"id":14,
+  "obj":"label",
+  "x":@p1-labels,"y":@p1r5,"h":50,"w":200,"text":"Basement:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"Basement Temperature Data",
+  "page":1,"id":15,
+  "obj":"label",
+  "x":@p1-values,"y":@p1r5,"h":50,"w":200,"text":"p1b15","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+
+{
+  "comment":"Downstairs label",
+  "page":1,"id":16,
+  "obj":"label",
+  "x":@p1-labels,"y":@p1r4,"h":50,"w":200,"text":"Downstairs:","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
+
+{
+  "comment":"Downstairs Temperature Data",
+  "page":1,"id":17,
+  "obj":"label",
+  "x":@p1-values,"y":@p1r4,"h":50,"w":200,"text":"p1b17","align":0,
+  "bg_color":"#2C3E50","text_color":"#FFFFFF"
+}
