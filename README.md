@@ -136,7 +136,7 @@ Last line inside block ends with a comma
 
 Line inside block does not end with a comma
 
-Line inside block does not have an even 
+Line inside block does not have an even number of quotes
 
 Line is not inside a data block
 
