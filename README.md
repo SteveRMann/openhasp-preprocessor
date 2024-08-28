@@ -22,7 +22,7 @@
 
 ## 🎈 Description <a name = "description"></a>
 
-- This Python script allows you to manage each page of an OpenHASP display in separate files.
+- This Python script allows you to manage each page of an OpenHASP display in separate .src files.
 - The script also looks for possible errors that would prevent your page from loading into the panel.
 - Managing page files is enhanced with comments and variables substitutions.
 
